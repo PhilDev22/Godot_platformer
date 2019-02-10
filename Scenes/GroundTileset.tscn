@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/tileset_dungeon2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tileset_dungeon1.png" type="Texture" id=2]
+
+[node name="GroundTileset" type="Node2D"]
+
+[node name="Ground00" type="Sprite" parent="." index="0"]
+
+position = Vector2( -77.9197, -0.167404 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground01" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, -0.902496 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground02" type="Sprite" parent="." index="2"]
+
+position = Vector2( 94.0918, -1.63759 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground03" type="Sprite" parent="." index="3"]
+
+position = Vector2( -80.8602, 89.5138 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground04" type="Sprite" parent="." index="4"]
+
+position = Vector2( 3.67542, 91.7191 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground05" type="Sprite" parent="." index="5"]
+
+position = Vector2( 97.7671, 89.5138 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground06" type="Sprite" parent="." index="6"]
+
+position = Vector2( -77.1848, 185.811 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 128, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground07" type="Sprite" parent="." index="7"]
+
+position = Vector2( 8.08589, 185.243 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground08" type="Sprite" parent="." index="8"]
+
+position = Vector2( 99.9724, 176.422 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 128, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground09" type="Sprite" parent="." index="9"]
+
+position = Vector2( 9.55608, 277.13 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 128, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+

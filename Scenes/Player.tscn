@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/knight_animation/idle0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/knight_animation/idle1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/knight_animation/idle2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/knight_animation/idle3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/knight_animation/dead0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/knight_animation/jump0.png" type="Texture" id=7]
+[ext_resource path="res://Assets/knight_animation/run0.png" type="Texture" id=8]
+[ext_resource path="res://Assets/knight_animation/run1.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Sword.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25.6273, 40.8545 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "dead",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "jump",
+"speed": 0.0
+} ]
+
+[sub_resource type="OccluderPolygon2D" id=3]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( 27.6077, 5.57883, 15.7243, 22.7438, -9.58295, 22.0836, -22.5667, -0.582947 )
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 2 )
+animation = "idle"
+frame = 3
+playing = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]
+
+occluder = SubResource( 3 )
+light_mask = 1
+_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
+
+[node name="Sword" parent="." index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 17.8707, 29.9762 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+
