@@ -93,7 +93,7 @@ tracks/2/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 14.0565, 44.5148 )
 
-[node name="Sword" type="Node2D" index="0"]
+[node name="Sword" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -133,8 +133,8 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D_Sword" index="0"]
 
-position = Vector2( -0.562176, -77.1412 )
-scale = Vector2( 1, 1.0191 )
+position = Vector2( -3.34653, -77.1412 )
+scale = Vector2( 1.16324, 1.0191 )
 shape = SubResource( 3 )
 
 [connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
