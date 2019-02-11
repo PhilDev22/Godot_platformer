@@ -74,7 +74,10 @@ func _set_idle():
 	#	$Swords/SwordRight/AnimationPlayer.play("sword_idle")
 	if on_ground:
 		$AnimatedSprite.play("idle")
-		
+	
+func is_attacking():
+	return attacking	
+	
 func _attack():
 	if not attacking:
 		attacking = true
@@ -94,6 +97,8 @@ func _on_Area2D_area_entered(area):
 	elif area.name == "Area2D_Treasure":
 		_open_treasure(area)
 	elif area.name == "Area2D_Killing":
+		_die()
+	elif area.name == "Area2D_Enemy":
 		_die()
 
 func _collect_key(area):
@@ -133,3 +138,5 @@ func _flip_horizontal(flip_left):
 		$Sword.apply_scale(Vector2(-1, 1))
 		$Sword.position.x = -$Sword.position.x
 	
+func killed_enemy():
+	print("Player killed enemy")

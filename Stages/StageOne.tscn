@@ -1,26 +1,93 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
-[ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Stages/StageOne.gd" type="Script" id=1]
+[ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Stages/AnimMoveGhost1.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "move"
+length = 6.0
+loop = true
+step = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 779.976, 427.567 ), Vector2( 560, 427.567 ), Vector2( 780, 427.567 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "move"
+length = 12.0
+loop = true
+step = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 694.796, 113.573 ), Vector2( 334, 113.573 ), Vector2( 694, 113.573 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
+}
+
 [node name="StageOne" type="Node2D"]
+
+script = ExtResource( 1 )
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
 position = Vector2( 0, 64 )
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -42,7 +109,7 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
 
 position = Vector2( 0, 64 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -62,43 +129,45 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
 
 [node name="Lights" type="Node2D" parent="." index="2"]
 
-[node name="Light00" parent="Lights" index="0" instance=ExtResource( 3 )]
+editor/display_folded = true
+
+[node name="Light00" parent="Lights" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 256, 448 )
 
-[node name="Light01" parent="Lights" index="1" instance=ExtResource( 3 )]
+[node name="Light01" parent="Lights" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1083.52, 508.127 )
 
-[node name="Light02" parent="Lights" index="2" instance=ExtResource( 3 )]
+[node name="Light02" parent="Lights" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 637.193, 407.916 )
 
-[node name="Light03" parent="Lights" index="3" instance=ExtResource( 3 )]
+[node name="Light03" parent="Lights" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 727.382, 80.7018 )
 
-[node name="Light05" parent="Lights" index="4" instance=ExtResource( 3 )]
+[node name="Light05" parent="Lights" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 192, 128 )
 
-[node name="Light04" parent="Lights" index="5" instance=ExtResource( 3 )]
+[node name="Light04" parent="Lights" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 1088, 128 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 78.9536, 545.286 )
 z_index = 10
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Treasure" parent="." index="4" instance=ExtResource( 5 )]
+[node name="Treasure" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 1205.12, 213.766 )
 scale = Vector2( 0.655632, 0.655632 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="Key" parent="." index="5" instance=ExtResource( 6 )]
+[node name="Key" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 189.817, 203.609 )
 scale = Vector2( 0.655632, 0.655632 )
@@ -131,22 +200,61 @@ shape = SubResource( 1 )
 editor/display_folded = true
 position = Vector2( 1088, 640 )
 
-[node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 7 )]
+[node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 8 )]
 
 light_mask = 2
 position = Vector2( -768, -448 )
 
-[node name="Obstacle01" parent="Obstacles" index="1" instance=ExtResource( 7 )]
+[node name="Obstacle01" parent="Obstacles" index="1" instance=ExtResource( 8 )]
 
 light_mask = 2
 position = Vector2( -64, 0 )
 
-[node name="Obstacle02" parent="Obstacles" index="2" instance=ExtResource( 7 )]
+[node name="Obstacle02" parent="Obstacles" index="2" instance=ExtResource( 8 )]
 
 light_mask = 2
 
-[node name="Exit" parent="." index="9" instance=ExtResource( 8 )]
+[node name="Exit" parent="." index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 1233.4, 574.255 )
+
+[node name="Enemies" type="Node2D" parent="." index="10"]
+
+z_index = 15
+_sections_unfolded = [ "Z Index" ]
+
+[node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 10 )]
+
+editor/display_folded = true
+position = Vector2( 737.002, 427.567 )
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimMoveGhost1" type="AnimationPlayer" parent="Enemies/EnemyGhost" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/move = SubResource( 2 )
+blend_times = [  ]
+script = ExtResource( 11 )
+
+[node name="EnemyGhost2" parent="Enemies" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 694.796, 113.573 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimMoveGhost2" type="AnimationPlayer" parent="Enemies/EnemyGhost2" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/move = SubResource( 3 )
+blend_times = [  ]
+script = ExtResource( 11 )
 
 
