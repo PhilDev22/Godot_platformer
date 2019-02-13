@@ -1,8 +1,5 @@
 extends Node2D
 
-func ready():
-	$Sprite/AnimationPlayer.current_animation = "idle"
-	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	#set idle animation after attack animation finished
 	if anim_name == "attack1":
