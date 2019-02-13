@@ -37,7 +37,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Torch" type="Sprite" parent="." index="1"]
 
-position = Vector2( -0.257027, 31.2285 )
+modulate = Color( 0.511719, 0.511719, 0.511719, 1 )
+position = Vector2( -0.580544, 30.905 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
 
 

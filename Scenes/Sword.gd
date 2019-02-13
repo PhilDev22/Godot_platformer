@@ -1,7 +1,6 @@
 extends Node2D
 
 func ready():
-	
 	$Sprite/AnimationPlayer.current_animation = "idle"
 	
 func _on_AnimationPlayer_animation_finished(anim_name):

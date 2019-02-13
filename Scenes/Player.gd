@@ -20,6 +20,9 @@ var is_flipped_left = false
 
 func _physics_process(delta):
 
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+	
 	if not dead:
 		if Input.is_action_pressed("ui_right"):
 			_move_right()
@@ -70,8 +73,6 @@ func _move_up():
 		
 func _set_idle():
 	velocity.x = 0
-	#if not attacking:
-	#	$Swords/SwordRight/AnimationPlayer.play("sword_idle")
 	if on_ground:
 		$AnimatedSprite.play("idle")
 	
