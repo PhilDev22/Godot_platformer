@@ -87,7 +87,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]

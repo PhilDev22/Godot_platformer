@@ -1,6 +1,8 @@
 extends Node2D
 
-var swords_pth_root = "res://Assets/swords/"
+#sword folder
+var swords_path_root = "res://Assets/swords/"
+#sword files
 var sword_paths = [
 	"sword_bronze1.png", 
 	"sword_bronze2.png", 
@@ -11,11 +13,13 @@ var sword_paths = [
 	"sword_gold_long1.png",
 	"sword_diamond_long1.png"
 ]
+var sword_cooldowns = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.7, 0.7]
 
+#attributes of short swords
 var sword_short_offset_y = -38
 var sword_short_collider_pos = Vector2(-3.3, -56.45034)
 var sword_short_collider_scale = Vector2(1.16324, 0.583639)
-
+#attributes of long swords
 var sword_long_offset_y = -54
 var sword_long_collider_pos = Vector2(-3.3, -77)
 var sword_long_collider_scale = Vector2(1.16324, 1.0191)
@@ -23,8 +27,10 @@ var sword_long_collider_scale = Vector2(1.16324, 1.0191)
 func change_type(id):
 	print("changing sword type")
 	if id < sword_paths.size():
+		#set new player attributes
+		get_parent().set_attack_cooldown(sword_cooldowns[id])
 		#switch texture
-		$Sprite.texture = load(swords_pth_root + sword_paths[id])
+		$Sprite.texture = load(swords_path_root + sword_paths[id])
 		#set position of sprite and of colliding area
 		if id <= 5: #short sword
 			$Sprite.offset.y = sword_short_offset_y

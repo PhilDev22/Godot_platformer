@@ -5,7 +5,7 @@ const GRAVITY = 30
 const JUMP_POWER = -750
 const FLOOR = Vector2(0, -1)
 var RESPAWN_TIME = 1.0
-var ATTACK_COOLDOWN = 0.5
+var ATTACK_COOLDOWN = 0.4
 
 var velocity = Vector2()
 
@@ -75,7 +75,10 @@ func _set_idle():
 	velocity.x = 0
 	if on_ground:
 		$AnimatedSprite.play("idle")
-	
+
+func set_attack_cooldown(sec):
+	ATTACK_COOLDOWN = sec
+		
 func is_attacking():
 	return attacking	
 	
@@ -96,7 +99,6 @@ func _on_Area2D_area_entered(area):
 	if area.name == "Area2D_Key":
 		_collect_key(area)
 	elif area.name == "Area2D_Treasure":
-		$Sword.change_type(7)
 		_open_treasure(area)
 	elif area.name == "Area2D_Killing":
 		_die()
@@ -112,6 +114,7 @@ func _open_treasure(area):
 	if has_key:
 		area.get_parent().get_node("AnimatedSprite").play("open")
 		has_key = false
+		$Sword.change_type(7)
 		print("Opened Treasure!")
 	
 func _die():
