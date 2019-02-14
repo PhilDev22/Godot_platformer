@@ -169,7 +169,7 @@ scale = Vector2( 0.655632, 0.655632 )
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="6"]
 
 show_behind_parent = true
-color = Color( 0.285156, 0.285156, 0.285156, 1 )
+color = Color( 0.226563, 0.226563, 0.226563, 1 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true

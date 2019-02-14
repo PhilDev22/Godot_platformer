@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Sword.gd" type="Script" id=1]
-[ext_resource path="res://Assets/sword1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/swords/sword_bronze1.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -93,21 +93,17 @@ tracks/2/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 14.0565, 44.5148 )
 
-[node name="Sword" type="Node2D" index="0"]
+[node name="Sword" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 5.34058e-005, -4.76837e-006 )
 rotation = 0.952814
 texture = ExtResource( 2 )
-offset = Vector2( -0.306717, -54.476 )
-_sections_unfolded = [ "Offset" ]
-__meta__ = {
-"_edit_lock_": true
-}
+offset = Vector2( -0.306717, -38.476 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
 
@@ -130,12 +126,14 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D_Sword" index="0"]
 
-position = Vector2( -3.34653, -77.1412 )
-scale = Vector2( 1.16324, 1.0191 )
+position = Vector2( -3.34653, -56.4503 )
+scale = Vector2( 1.16324, 0.583639 )
 shape = SubResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 

@@ -96,6 +96,7 @@ func _on_Area2D_area_entered(area):
 	if area.name == "Area2D_Key":
 		_collect_key(area)
 	elif area.name == "Area2D_Treasure":
+		$Sword.change_type(7)
 		_open_treasure(area)
 	elif area.name == "Area2D_Killing":
 		_die()
