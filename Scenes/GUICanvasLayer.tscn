@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/GUICanvasLayer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/GUIHeart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/heart_empty.png" type="Texture" id=3]
+[ext_resource path="res://Assets/heart.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "empty",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[node name="GUICanvasLayer" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Heart0" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 36.744, 30.0633 )
+frames = SubResource( 1 )
+
+[node name="Heart1" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 84.1477, 29.7397 )
+frames = SubResource( 1 )
+
+[node name="Heart2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 132.375, 29.3578 )
+frames = SubResource( 1 )
+
+

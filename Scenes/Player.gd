@@ -6,6 +6,7 @@ const JUMP_POWER = -750
 const FLOOR = Vector2(0, -1)
 var RESPAWN_TIME = 1.0
 var ATTACK_COOLDOWN = 0.4
+var MAX_LIFES = 3
 
 var velocity = Vector2()
 
@@ -17,6 +18,7 @@ var respawn_timer = 0.0
 var attacking = false
 var attack_cooldown_timer = 0.0
 var is_flipped_left = false
+var lifes = MAX_LIFES
 
 func _physics_process(delta):
 
@@ -76,6 +78,11 @@ func _set_idle():
 	if on_ground:
 		$AnimatedSprite.play("idle")
 
+func _reset():
+	lifes = MAX_LIFES
+	get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+	
+	
 func set_attack_cooldown(sec):
 	ATTACK_COOLDOWN = sec
 		
@@ -103,8 +110,16 @@ func _on_Area2D_area_entered(area):
 	elif area.name == "Area2D_Killing":
 		_die()
 	elif area.name == "Area2D_Enemy":
-		_die()
+		_got_hurt()
 
+func _got_hurt():
+	lifes -= 1
+	if lifes == 0:
+		lifes = 0
+		_die()
+	else:
+		get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+		
 func _collect_key(area):
 	print("Got Key!")
 	area.get_parent().visible = false
@@ -127,6 +142,7 @@ func _respawn():
 	dead = false
 	position = get_parent().get_node("Area2D_Start").position
 	_flip_horizontal(false)
+	_reset()
 
 func _update_respawn(delta):
 	respawn_timer += delta

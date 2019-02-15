@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -275,5 +276,7 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/move = SubResource( 3 )
 blend_times = [  ]
+
+[node name="GUICanvasLayer" parent="." index="11" instance=ExtResource( 10 )]
 
 
