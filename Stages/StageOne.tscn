@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -16,68 +16,6 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "move"
-length = 6.0
-loop = true
-step = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 779.976, 427.567 ), Vector2( 560, 427.567 ), Vector2( 780, 427.567 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 3, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-
-resource_name = "move"
-length = 12.0
-loop = true
-step = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 6, 12 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 694.796, 113.573 ), Vector2( 334, 113.573 ), Vector2( 694, 113.573 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 6, 12 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ) ]
-}
 
 [node name="StageOne" type="Node2D" index="0"]
 
@@ -246,42 +184,23 @@ position = Vector2( 1233.4, 574.255 )
 
 [node name="Enemies" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
 z_index = 15
 _sections_unfolded = [ "Z Index" ]
 
 [node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( 737.002, 427.567 )
+position = Vector2( 678.506, 413.963 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimMoveGhost1" type="AnimationPlayer" parent="Enemies/EnemyGhost" index="1"]
-
-root_node = NodePath("..")
-autoplay = "move"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/move = SubResource( 2 )
-blend_times = [  ]
-
 [node name="EnemyGhost2" parent="Enemies" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 694.796, 113.573 )
+position = Vector2( 566.921, 120.375 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimMoveGhost2" type="AnimationPlayer" parent="Enemies/EnemyGhost2" index="1"]
-
-root_node = NodePath("..")
-autoplay = "move"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/move = SubResource( 3 )
-blend_times = [  ]
-
 [node name="Items" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
 
 [node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 10 )]
 
