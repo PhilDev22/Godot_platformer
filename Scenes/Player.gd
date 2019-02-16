@@ -7,6 +7,7 @@ const FLOOR = Vector2(0, -1)
 var RESPAWN_TIME = 1.0
 var ATTACK_COOLDOWN = 0.4
 var MAX_LIFES = 3
+var SPRING_BACK_TIME = 0.7
 
 var velocity = Vector2()
 
@@ -19,6 +20,9 @@ var attacking = false
 var attack_cooldown_timer = 0.0
 var is_flipped_left = false
 var lifes = MAX_LIFES
+var last_direction = 1
+var spring_back = false
+var spring_back_timer = 0.0
 
 func _physics_process(delta):
 
@@ -40,7 +44,7 @@ func _physics_process(delta):
 		_update_attack(delta)
 		
 		if Input.is_action_pressed("ui_up"):
-			_move_up()
+			_move_up(true)
 			
 		if is_on_floor():
 			on_ground = true
@@ -54,22 +58,28 @@ func _physics_process(delta):
 	else: #dead
 		_update_respawn(delta)
 
+	_update_spring_back(delta)
+	
 	velocity.y += GRAVITY	
 		
 	velocity = move_and_slide(velocity, FLOOR)
 
 func _move_left():
-	velocity.x = -SPEED
-	$AnimatedSprite.play("run")
-	_flip_horizontal(true)
+	if not spring_back:
+		last_direction = -1
+		velocity.x = -SPEED
+		$AnimatedSprite.play("run")
+		_flip_horizontal(true)
 	
 func _move_right():
-	velocity.x = SPEED
-	$AnimatedSprite.play("run")
-	_flip_horizontal(false)
+	if not spring_back:
+		last_direction = 1
+		velocity.x = SPEED
+		$AnimatedSprite.play("run")
+		_flip_horizontal(false)
 	
-func _move_up():
-	if on_ground:
+func _move_up(when_on_ground):
+	if !when_on_ground or (when_on_ground and on_ground):
 		velocity.y = JUMP_POWER
 		on_ground = false
 		
@@ -108,16 +118,32 @@ func _on_Area2D_area_entered(area):
 	elif area.name == "Area2D_Treasure":
 		_open_treasure(area)
 	elif area.name == "Area2D_Killing":
-		_die()
+		_got_hurt(1)
 	elif area.name == "Area2D_Enemy":
-		_got_hurt()
+		_got_hurt(1)
 
-func _got_hurt():
-	lifes -= 1
+func _spring_back():
+	$AnimatedSprite/AnimationPlayer.play("got_hurt")
+	_move_up(false)
+	spring_back = true
+	
+func _update_spring_back(delta):
+	if spring_back:
+		#stop spring back
+		if spring_back_timer >= SPRING_BACK_TIME:
+			spring_back_timer = 0.0
+			spring_back = false
+		else:
+			spring_back_timer += delta
+			#move to direction depending on last move
+			velocity.x = -last_direction * SPEED
+	
+func _got_hurt(amount):
+	lifes -= amount
 	if lifes == 0:
-		lifes = 0
 		_die()
-	else:
+	else:	
+		_spring_back()
 		get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
 		
 func _collect_key(area):
@@ -133,7 +159,8 @@ func _open_treasure(area):
 		print("Opened Treasure!")
 	
 func _die():
-	_move_up()
+	lifes = 0
+	get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
 	dead = true
 	velocity.x = 0
 	$AnimatedSprite.play("dead")
