@@ -121,6 +121,8 @@ func _on_Area2D_area_entered(area):
 		_got_hurt(1)
 	elif area.name == "Area2D_Enemy":
 		_got_hurt(1)
+	elif area.name == "Area2D_PotionSmall":
+		_collect_potion_small(area)
 
 func _spring_back():
 	$AnimatedSprite/AnimationPlayer.play("got_hurt")
@@ -151,6 +153,12 @@ func _collect_key(area):
 	area.get_parent().visible = false
 	has_key = true
 	
+func _collect_potion_small(area):
+	area.get_owner().queue_free()
+	if lifes < MAX_LIFES:
+		lifes += 1
+		get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+		
 func _open_treasure(area):
 	if has_key:
 		area.get_parent().get_node("AnimatedSprite").play("open")

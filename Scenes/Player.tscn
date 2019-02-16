@@ -106,7 +106,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -126,6 +127,8 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder" ]
 
 [node name="Lights" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Light00" parent="Lights" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 256, 448 )
@@ -152,7 +155,7 @@ position = Vector2( 1088, 128 )
 
 [node name="Player" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 78.9536, 545.286 )
+position = Vector2( 129.287, 530.322 )
 z_index = 10
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
@@ -243,6 +246,7 @@ position = Vector2( 1233.4, 574.255 )
 
 [node name="Enemies" type="Node2D" parent="." index="10"]
 
+editor/display_folded = true
 z_index = 15
 _sections_unfolded = [ "Z Index" ]
 
@@ -277,6 +281,12 @@ playback_speed = 1.0
 anims/move = SubResource( 3 )
 blend_times = [  ]
 
-[node name="GUICanvasLayer" parent="." index="11" instance=ExtResource( 10 )]
+[node name="Items" type="Node2D" parent="." index="11"]
+
+[node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 1140.44, 499.426 )
+
+[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 11 )]
 
 
