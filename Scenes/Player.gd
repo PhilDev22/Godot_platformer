@@ -90,7 +90,7 @@ func _set_idle():
 
 func _reset():
 	lifes = MAX_LIFES
-	get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+	_update_gui_lifes()
 	
 	
 func set_attack_cooldown(sec):
