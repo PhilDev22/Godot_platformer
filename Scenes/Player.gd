@@ -146,7 +146,7 @@ func _got_hurt(amount):
 		_die()
 	else:	
 		_spring_back()
-		get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+		_update_gui_lifes()
 		
 func _collect_key(area):
 	print("Got Key!")
@@ -157,7 +157,7 @@ func _collect_potion_small(area):
 	area.get_owner().queue_free()
 	if lifes < MAX_LIFES:
 		lifes += 1
-		get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+		_update_gui_lifes()
 		
 func _open_treasure(area):
 	if has_key:
@@ -166,9 +166,14 @@ func _open_treasure(area):
 		$Sword.change_type(7)
 		print("Opened Treasure!")
 	
+func _increase_life_permanent(amount):
+	for i in amount:
+		lifes += 1
+		get_parent().get_node("GUICanvasLayer").add_heart()
+		
 func _die():
 	lifes = 0
-	get_parent().get_node("GUICanvasLayer").set_hearts(lifes, MAX_LIFES)
+	_update_gui_lifes()
 	dead = true
 	velocity.x = 0
 	$AnimatedSprite.play("dead")
@@ -193,6 +198,9 @@ func _flip_horizontal(flip_left):
 		#flip sword
 		$Sword.apply_scale(Vector2(-1, 1))
 		$Sword.position.x = -$Sword.position.x
+	
+func _update_gui_lifes():
+	get_parent().get_node("GUICanvasLayer").set_active_hearts(lifes)
 	
 func killed_enemy():
 	print("Player killed enemy")
