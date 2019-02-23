@@ -1,11 +1,12 @@
 extends Node
 
 var current_scene = null
-var current_level = 1
+var current_level = 2
 
 func _ready():
-    var root = get_tree().get_root()
-    current_scene = root.get_child(root.get_child_count() -1)
+	var root = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() -1)
+	load_next_level()
 
 func load_next_level():
 	current_level += 1
