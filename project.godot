@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="Platformer"
-run/main_scene="res://Stages/StageOne.tscn"
+run/main_scene="res://Stages/Stage1.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scenes/Global.gd"
 
 [display]
 

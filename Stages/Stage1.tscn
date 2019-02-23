@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -7,11 +7,8 @@
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/ObstacleSaw.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -181,40 +178,12 @@ position = Vector2( -64, 0 )
 
 light_mask = 2
 
-[node name="ObstacleSaw" parent="Obstacles" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( -1028.34, -320.51 )
-
-[node name="ObstacleSaw2" parent="Obstacles" index="5" instance=ExtResource( 8 )]
-
-position = Vector2( 120.742, -260.383 )
-
-[node name="Exit" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Exit" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 1289.17, 574.255 )
 
-[node name="Enemies" type="Node2D" parent="." index="10"]
+[node name="Items" type="Node2D" parent="." index="10"]
 
-z_index = 15
-_sections_unfolded = [ "Z Index" ]
-
-[node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 10 )]
-
-position = Vector2( 703.396, 409.882 )
-scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="EnemyGhost2" parent="Enemies" index="1" instance=ExtResource( 10 )]
-
-position = Vector2( 566.921, 120.375 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Items" type="Node2D" parent="." index="11"]
-
-[node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 11 )]
-
-position = Vector2( 1176.62, 514.5 )
-
-[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 12 )]
+[node name="GUICanvasLayer" parent="." index="11" instance=ExtResource( 9 )]
 
 

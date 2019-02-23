@@ -24,6 +24,9 @@ var last_direction = 1
 var spring_back = false
 var spring_back_timer = 0.0
 
+func ready():
+	position = get_parent().get_node("Area2D_Start").position
+	
 func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_cancel"):
@@ -123,7 +126,13 @@ func _on_Area2D_area_entered(area):
 		_got_hurt(1)
 	elif area.name == "Area2D_PotionSmall":
 		_collect_potion_small(area)
+	elif area.name == "Area2D_Exit":
+		_next_level()
 
+func _next_level():
+	get_node("/root/Global").load_next_level()
+	#get_tree().change_scene("res://Stages/Stage" + str(current_level) +".tscn")
+	
 func _spring_back():
 	$AnimatedSprite/AnimationPlayer.play("got_hurt")
 	_move_up(false)
