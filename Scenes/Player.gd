@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var scn_poup_items = preload("res://Scenes/PopupItems.tscn")
+
 const SPEED = 300
 const GRAVITY = 30
 const JUMP_POWER = -750
@@ -23,6 +25,7 @@ var lifes = MAX_LIFES
 var last_direction = 1
 var spring_back = false
 var spring_back_timer = 0.0
+var popup_active = false
 
 func ready():
 	position = get_parent().get_node("Area2D_Start").position
@@ -32,41 +35,42 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 	
-	if not dead:
-		if Input.is_action_pressed("ui_right"):
-			_move_right()
-		elif Input.is_action_pressed("ui_left"):
-			_move_left()
-		else:
-			if not Input.is_action_pressed("ui_select"):
-				_set_idle()
-			
-		if Input.is_action_pressed("ui_select"):
-			_attack()
-
-		_update_attack(delta)
-		
-		if Input.is_action_pressed("ui_up"):
-			_move_up(true)
-			
-		if is_on_floor():
-			on_ground = true
-		else:
-			on_ground = false
-			if velocity.y < 0:
-				$AnimatedSprite.play("jump")
+	if not popup_active:
+		if not dead:
+			if Input.is_action_pressed("ui_right"):
+				_move_right()
+			elif Input.is_action_pressed("ui_left"):
+				_move_left()
 			else:
-				$AnimatedSprite.play("fall")
-
-	else: #dead
-		_update_respawn(delta)
-
-	_update_spring_back(delta)
+				if not Input.is_action_pressed("ui_select"):
+					_set_idle()
+				
+			if Input.is_action_pressed("ui_select"):
+				_attack()
 	
-	velocity.y += GRAVITY	
+			_update_attack(delta)
+			
+			if Input.is_action_pressed("ui_up"):
+				_move_up(true)
+				
+			if is_on_floor():
+				on_ground = true
+			else:
+				on_ground = false
+				if velocity.y < 0:
+					$AnimatedSprite.play("jump")
+				else:
+					$AnimatedSprite.play("fall")
+	
+		else: #dead
+			_update_respawn(delta)
+	
+		_update_spring_back(delta)
 		
-	velocity = move_and_slide(velocity, FLOOR)
-
+		velocity.y += GRAVITY	
+			
+		velocity = move_and_slide(velocity, FLOOR)
+			
 func _move_left():
 	if not spring_back:
 		last_direction = -1
@@ -170,10 +174,22 @@ func _collect_potion_small(area):
 		
 func _open_treasure(area):
 	if has_key:
+		$AnimatedSprite.play("idle")
 		area.get_parent().get_node("AnimatedSprite").play("open")
 		has_key = false
-		$Sword.change_type(7)
 		print("Opened Treasure!")
+		_show_item_popup()
+
+func on_close_item_popup():
+	popup_active = false
+	
+func _show_item_popup():
+	var popup = scn_poup_items.instance()
+	popup.set_name("PopupItems")
+	popup.set_position(Vector2(640, 360))
+	get_parent().get_node("GUICanvasLayer").add_child(popup)
+	popup.init_items( get_node("/root/Global").current_level )
+	popup_active = true
 	
 func _increase_life_permanent(amount):
 	for i in amount:

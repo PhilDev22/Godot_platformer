@@ -24,9 +24,15 @@ var sword_long_offset_y = -54
 var sword_long_collider_pos = Vector2(-3.3, -77)
 var sword_long_collider_scale = Vector2(1.16324, 1.0191)
 
+func _ready():
+	change_type( get_node("/root/Global").current_sword_id)
+	
 func change_type(id):
 	print("changing sword type")
-	if id < sword_paths.size():
+	if id == -1:
+		visible = false
+	elif id < sword_paths.size():
+		visible = true
 		#set new player attributes
 		get_parent().set_attack_cooldown(sword_cooldowns[id])
 		#switch texture
@@ -42,6 +48,7 @@ func change_type(id):
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.x = Vector2(sword_long_collider_pos.x, 0)
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.y = Vector2(0, sword_long_collider_pos.y)
 			$Sprite/Area2D_Sword/CollisionShape2D.scale = sword_long_collider_scale
+
 	else:
 		print("Sword id " + id + " could not be loaded!")
 	

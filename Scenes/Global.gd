@@ -1,16 +1,25 @@
 extends Node
 
 var current_scene = null
-var current_level = 2
+var current_level = 1
+var current_sword_id = -1
 
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
-	load_next_level()
+	#load_next_level()
 
 func load_next_level():
-	current_level += 1
-	goto_scene("res://Stages/Stage" + str(current_level) +".tscn")
+	var path_new_stage = "res://Stages/Stage" + str(current_level + 1) +".tscn"
+	var file2Check = File.new()
+	if file2Check.file_exists(path_new_stage):
+		current_level += 1
+		goto_scene(path_new_stage)
+	else:
+		print("Could not find scene: " + path_new_stage)
+	
+func set_sword_id(id):
+	current_sword_id = id
 	
 func goto_scene(path):
     # This function will usually be called from a signal callback,
@@ -22,8 +31,7 @@ func goto_scene(path):
     # The way around this is deferring the load to a later time, when
     # it is ensured that no code from the current scene is running:
 
-    call_deferred("_deferred_goto_scene", path)
-
+	call_deferred("_deferred_goto_scene", path)
 
 func _deferred_goto_scene(path):
     # Immediately free the current scene,
