@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ObstacleSpikes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/EnemyHand.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -180,16 +179,12 @@ position = Vector2( -64, 0 )
 
 light_mask = 2
 
-[node name="ObstacleHand" parent="Obstacles" index="4" instance=ExtResource( 8 )]
-
-position = Vector2( -734.075, 33.1615 )
-
-[node name="Exit" parent="." index="9" instance=ExtResource( 9 )]
+[node name="Exit" parent="." index="9" instance=ExtResource( 8 )]
 
 position = Vector2( 1289.17, 574.255 )
 
 [node name="Items" type="Node2D" parent="." index="10"]
 
-[node name="GUICanvasLayer" parent="." index="11" instance=ExtResource( 10 )]
+[node name="GUICanvasLayer" parent="." index="11" instance=ExtResource( 9 )]
 
 

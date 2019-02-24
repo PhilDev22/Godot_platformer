@@ -56,7 +56,7 @@ tracks/1/keys = {
 "values": [ "default", "grab", "default" ]
 }
 
-[node name="Obstacle" type="Node2D"]
+[node name="ObstacleHand" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
