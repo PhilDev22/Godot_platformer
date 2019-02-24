@@ -61,9 +61,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Area2D_Sword_area_entered(area):
 	var player = get_parent()
+	var enemy = area.get_owner()
 	if area.name == "Area2D_Enemy":
-		if player.is_attacking():
-			#delete enemy
-			area.get_owner().queue_free()
+		if player.is_attacking() and not enemy.dead:
+			enemy.die()
 			#call function of player
 			player.killed_enemy()

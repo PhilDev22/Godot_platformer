@@ -127,7 +127,7 @@ func _on_Area2D_area_entered(area):
 	elif area.name == "Area2D_Killing":
 		_got_hurt(1)
 	elif area.name == "Area2D_Enemy":
-		_got_hurt(1)
+		_got_hurt_by_enemy(area)
 	elif area.name == "Area2D_PotionSmall":
 		_collect_potion_small(area)
 	elif area.name == "Area2D_Exit":
@@ -161,8 +161,11 @@ func _got_hurt(amount):
 		_spring_back()
 		_update_gui_lifes()
 		
+func _got_hurt_by_enemy(enemy_area):
+	if not enemy_area.get_owner().dead:
+		_got_hurt(1)
+	
 func _collect_key(area):
-	print("Got Key!")
 	area.get_parent().visible = false
 	has_key = true
 	
@@ -177,7 +180,6 @@ func _open_treasure(area):
 		$AnimatedSprite.play("idle")
 		area.get_parent().get_node("AnimatedSprite").play("open")
 		has_key = false
-		print("Opened Treasure!")
 		_show_item_popup()
 
 func on_close_item_popup():
