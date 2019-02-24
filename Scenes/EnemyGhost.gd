@@ -10,6 +10,6 @@ func die():
 	$AnimatedSprite/AnimationPlayer_Movement.play("die")
 
 func _on_AnimationPlayer_Movement_animation_finished(anim_name):
+	#delete self after death animation finished
 	if anim_name == "die":
-		#delete enemy after death animation finished
 		queue_free()

@@ -6,12 +6,13 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Treasure.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Key.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Obstacle00.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ObstacleSpikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/ObstacleSaw.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
