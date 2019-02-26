@@ -8,6 +8,7 @@ func die():
 	$AnimatedSprite.play("dead")
 	$AnimatedSprite/AnimationPlayer_Pulsate.stop(true)
 	$AnimatedSprite/AnimationPlayer_Movement.play("die")
+	$AnimatedSprite/Particles2D.emitting = true
 
 func _on_AnimationPlayer_Movement_animation_finished(anim_name):
 	#delete self after death animation finished

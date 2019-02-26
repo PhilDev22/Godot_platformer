@@ -234,7 +234,6 @@ shape = SubResource( 2 )
 
 [node name="Ground07" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( -2.56203, 169.42 )
 texture = ExtResource( 1 )
 region_enabled = true

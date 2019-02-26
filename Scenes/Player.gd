@@ -181,6 +181,7 @@ func _collect_key(area):
 	
 func _collect_potion_small(area):
 	area.get_owner().queue_free()
+	$Particles2D_Potion.emitting = true
 	if lifes < MAX_LIFES:
 		lifes += 1
 		_update_gui_lifes()
@@ -195,6 +196,7 @@ func _open_treasure(area):
 
 func on_close_item_popup():
 	popup_active = false
+	$Particles2D.emitting = true
 
 # load popup for choosing new item, depending on current stage
 func _show_item_popup():
