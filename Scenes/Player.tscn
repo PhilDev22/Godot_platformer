@@ -187,7 +187,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Gravity", "Initial Velocity", "Spread" ]
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -223,7 +223,6 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
