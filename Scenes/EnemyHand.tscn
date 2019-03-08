@@ -109,7 +109,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Spread", "Trail" ]
 
-[node name="ObstacleHand" type="Node2D" index="0"]
+[node name="ObstacleHand" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
