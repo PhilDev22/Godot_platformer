@@ -1,13 +1,16 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var dead = false
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+func die():
+	dead = true
+	#stop movement and current animation and play death animation
+	$AnimatedSprite.play("dead")
+	$AnimatedSprite/AnimationPlayer_Pulsate.stop(true)
+	$AnimatedSprite/AnimationPlayer_Movement.play("die")
+	$AnimatedSprite/Particles2D.emitting = true
 
-func flip_horizontal():
-	$Sprite.flip_h = !$Sprite.flip_h
+func _on_AnimationPlayer_Movement_animation_finished(anim_name):
+	#delete self after death animation finished
+	if anim_name == "die":
+		queue_free()

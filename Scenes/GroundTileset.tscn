@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Assets/tileset_dungeon2.png" type="Texture" id=1]
-[ext_resource path="res://Assets/tileset_dungeon1.png" type="Texture" id=2]
 
 [node name="GroundTileset" type="Node2D"]
 
@@ -76,7 +75,7 @@ __meta__ = {
 position = Vector2( -77.1848, 185.811 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 128, 64, 64 )
+region_rect = Rect2( 0, 320, 64, 64 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -87,7 +86,7 @@ __meta__ = {
 position = Vector2( 8.08589, 185.243 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 64, 128, 64, 64 )
+region_rect = Rect2( 64, 320, 64, 64 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -98,7 +97,7 @@ __meta__ = {
 position = Vector2( 99.9724, 176.422 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 128, 64, 64 )
+region_rect = Rect2( 128, 320, 64, 64 )
 _sections_unfolded = [ "Region" ]
 __meta__ = {
 "_edit_group_": true
@@ -107,10 +106,22 @@ __meta__ = {
 [node name="Ground09" type="Sprite" parent="." index="9"]
 
 position = Vector2( 9.55608, 277.13 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 192, 128, 64, 64 )
+region_rect = Rect2( 64, 128, 64, 64 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Ground10" type="Sprite" parent="." index="10"]
+
+position = Vector2( 9.55596, 406.761 )
+z_index = 1
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 128 )
+_sections_unfolded = [ "Region", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }

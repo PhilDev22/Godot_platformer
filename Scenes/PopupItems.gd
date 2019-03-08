@@ -33,7 +33,9 @@ func init_items(stage):
 		item_ids = [1, 3]
 	if stage == 3:
 		item_ids = [4, 6]
-		
+	if stage == 4:
+		item_ids = [5, 7]	
+			
 	$Card0.texture = load(items_path_root + item_paths[ item_ids[0] ])
 	$Card1.texture = load(items_path_root + item_paths[ item_ids[1] ])
 	

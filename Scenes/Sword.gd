@@ -51,19 +51,17 @@ func change_type(id):
 
 	else:
 		print("Sword id " + id + " could not be loaded!")
-	
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	#set idle animation after attack animation finished
 	if anim_name == "attack1":
 		$Sprite/AnimationPlayer.queue("idle")
 
-
 func _on_Area2D_Sword_area_entered(area):
 	var player = get_parent()
+	var enemy = area.get_owner()
 	if area.name == "Area2D_Enemy":
-		if player.is_attacking():
-			#delete enemy
-			area.get_owner().queue_free()
+		if player.is_attacking() and not enemy.dead:
+			enemy.die()
 			#call function of player
 			player.killed_enemy()

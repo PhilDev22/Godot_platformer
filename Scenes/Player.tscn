@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/knight_animation/idle0.png" type="Texture" id=2]
 [ext_resource path="res://Assets/knight_animation/idle1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/knight_animation/idle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/knight_animation/idle3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/knight_animation/run0.png" type="Texture" id=6]
-[ext_resource path="res://Assets/knight_animation/run1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/knight_animation/jump0.png" type="Texture" id=8]
-[ext_resource path="res://Assets/knight_animation/dead0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/knight_animation/dead0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/knight_animation/run0.png" type="Texture" id=7]
+[ext_resource path="res://Assets/knight_animation/run1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/knight_animation/jump0.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Sword.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/particles/particle_yellow_star.png" type="Texture" id=11]
+[ext_resource path="res://Assets/heart.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,25 +26,25 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "dead",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": false,
 "name": "jump",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "dead",
-"speed": 0.0
+"name": "fall",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=3]
@@ -70,7 +72,86 @@ closed = false
 cull_mode = 1
 polygon = PoolVector2Array( 27.6077, 5.57883, 15.7243, 22.7438, -9.58295, 22.0836, -22.5667, -0.582947 )
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 30, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.44
+angular_velocity = 100.0
+angular_velocity_random = 0.45
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.7
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="ParticlesMaterial" id=6]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.3
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.5
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -106,7 +187,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -129,6 +210,50 @@ _sections_unfolded = [ "Material", "Visibility", "Z Index" ]
 [node name="Sword" parent="." index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 17.8707, 29.9762 )
+
+[node name="Particles2D" type="Particles2D" parent="." index="5"]
+
+emitting = false
+amount = 50
+lifetime = 2.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 1.0
+fixed_fps = 25
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 11 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
+
+[node name="Particles2D_Potion" type="Particles2D" parent="." index="6"]
+
+emitting = false
+amount = 8
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.8
+randomness = 0.1
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = ExtResource( 12 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 

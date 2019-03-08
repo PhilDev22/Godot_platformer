@@ -13,7 +13,7 @@ polygon = PoolVector2Array( -32.0114, -32.0629, 31.8938, -32.0174, 31.9744, 31.9
 custom_solver_bias = 0.0
 extents = Vector2( 32.1492, 32.0629 )
 
-[node name="GroundTileset" type="Node2D"]
+[node name="GroundTileset" type="Node2D" index="0"]
 
 [node name="Ground00" type="Sprite" parent="." index="0"]
 
@@ -234,7 +234,6 @@ shape = SubResource( 2 )
 
 [node name="Ground07" type="Sprite" parent="." index="7"]
 
-editor/display_folded = true
 position = Vector2( -2.56203, 169.42 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -323,6 +322,98 @@ friction = 1.0
 bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground09/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Ground10" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 199.157, -6.7693 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Ground10" index="0"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground10" index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground10/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Ground11" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 280.276, -7.81825 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Ground11" index="0"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground11" index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground11/StaticBody2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Ground12" type="Sprite" parent="." index="12"]
+
+position = Vector2( 374.298, -6.73753 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 192, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Ground12" index="0"]
+
+occluder = SubResource( 1 )
+light_mask = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground12" index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground12/StaticBody2D" index="0"]
 
 shape = SubResource( 2 )
 
