@@ -182,13 +182,12 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -100, 0 ), Vector2( -100, 0 ), Vector2( 100, 0 ), Vector2( 100, 0 ) ]
 }
 
-[node name="EnemySkeleton" type="Node2D" index="0"]
+[node name="EnemySkeleton" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
-position = Vector2( 100, 0 )
 emitting = false
 amount = 6
 lifetime = 2.0
@@ -211,7 +210,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 100, 0 )
 frames = SubResource( 1 )
 animation = "walk"
 frame = 1

@@ -1,8 +1,8 @@
 extends Node
 
 var current_scene = null
-var current_level = 1
-var current_sword_id = 1
+var current_level = 0
+var current_sword_id = -1
 
 func _ready():
 	var root = get_tree().get_root()
