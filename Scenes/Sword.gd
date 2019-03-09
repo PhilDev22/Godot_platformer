@@ -24,6 +24,8 @@ var sword_long_offset_y = -54
 var sword_long_collider_pos = Vector2(-3.3, -77)
 var sword_long_collider_scale = Vector2(1.16324, 1.0191)
 
+var attack_phase = false
+
 func _ready():
 	change_type( get_node("/root/Global").current_sword_id)
 	
@@ -61,7 +63,16 @@ func _on_Area2D_Sword_area_entered(area):
 	var player = get_parent()
 	var enemy = area.get_owner()
 	if area.name == "Area2D_Enemy":
-		if player.is_attacking() and not enemy.dead:
-			enemy.die()
+		if not enemy.dead and player.is_attacking() and attack_phase:
+			enemy.hit()
 			#call function of player
-			player.killed_enemy()
+			if enemy.dead:
+				player.killed_enemy()
+
+func _attack_active():
+	print("Attack phase active")
+	attack_phase = true
+	
+func _attack_finished():
+	print("Attack phase inactive")
+	attack_phase = false

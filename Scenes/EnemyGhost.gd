@@ -2,6 +2,9 @@ extends Node2D
 
 var dead = false
 
+func hit():
+	die()
+	
 func die():
 	dead = true
 	#stop movement and current animation and play death animation

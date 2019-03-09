@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -11,13 +11,14 @@
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/EnemySkeleton.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -328,5 +329,9 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -30.5641, -97.6804 )
 
 [node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 11 )]
+
+[node name="Node2D" parent="." index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 327.605, 578.574 )
 
 
