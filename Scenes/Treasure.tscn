@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Treasure" type="Node2D" index="0"]
+[node name="Treasure" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]

@@ -242,7 +242,7 @@ func _flip_horizontal(flip_left):
 	
 func _update_gui_lifes():
 	#update amount of hearts showing at the gui
-	get_parent().get_node("GUICanvasLayer").set_active_hearts(lifes)
+	get_parent().get_node("GUICanvasLayer").set_active_hearts(lifes)	
 	
 func killed_enemy():
 	print("Player killed enemy")

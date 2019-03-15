@@ -13,7 +13,7 @@ polygon = PoolVector2Array( -32.0114, -32.0629, 31.8938, -32.0174, 31.9744, 31.9
 custom_solver_bias = 0.0
 extents = Vector2( 32.1492, 32.0629 )
 
-[node name="GroundTileset" type="Node2D" index="0"]
+[node name="GroundTileset" type="Node2D"]
 
 [node name="Ground00" type="Sprite" parent="." index="0"]
 

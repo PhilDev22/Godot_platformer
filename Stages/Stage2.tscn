@@ -11,14 +11,14 @@
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/EnemySkeleton.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D"]
+[node name="Stage" type="Node2D" index="0"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -304,23 +304,23 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 1410.48, 599.704 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost2" parent="Enemies" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 274.468, 266.678 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost3" parent="Enemies" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 946.57, -61.675 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost4" parent="Enemies" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( 1973.07, 609.091 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Items" type="Node2D" parent="." index="11"]
 
@@ -330,8 +330,23 @@ position = Vector2( -30.5641, -97.6804 )
 
 [node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 11 )]
 
-[node name="Node2D" parent="." index="13" instance=ExtResource( 12 )]
+[node name="Environment" type="Node2D" parent="." index="13"]
 
-position = Vector2( 327.605, 578.574 )
+position = Vector2( 362.975, 608.503 )
+
+[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 12 )]
+
+[node name="Woodbox2" parent="Environment" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 1203.89, -126.285 )
+
+[node name="Woodbox3" parent="Environment" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 1259.64, -652.517 )
+rotation = -0.679448
+
+[node name="Woodbox4" parent="Environment" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 1337.93, -637.025 )
 
 

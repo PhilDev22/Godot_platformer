@@ -61,13 +61,16 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Area2D_Sword_area_entered(area):
 	var player = get_parent()
-	var enemy = area.get_owner()
 	if area.name == "Area2D_Enemy":
+		var enemy = area.get_owner()
 		if not enemy.dead and player.is_attacking() and attack_phase:
 			enemy.hit()
 			#call function of player
 			if enemy.dead:
 				player.killed_enemy()
+	elif area.name == "Area2D_Destroyable":
+		if player.is_attacking() and attack_phase:
+			area.get_owner().hit()
 
 func _attack_active():
 	print("Attack phase active")
