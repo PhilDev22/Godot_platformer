@@ -9,4 +9,6 @@ func open():
 	get_node("AnimatedSprite").play("open")
 	opened = true
 	
+func show_hint():
+	get_node("SpriteHelp/AnimationPlayer").play("show")
 
