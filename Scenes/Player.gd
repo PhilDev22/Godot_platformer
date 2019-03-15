@@ -188,11 +188,14 @@ func _collect_potion_small(area):
 
 # play opening animation and show popup
 func _open_treasure(area):
-	if has_key:
-		$AnimatedSprite.play("idle")
-		area.get_parent().get_node("AnimatedSprite").play("open")
-		has_key = false
-		_show_item_popup()
+	if not area.get_parent().opened:
+		if has_key:
+			$AnimatedSprite.play("idle")
+			area.get_parent().open()
+			has_key = false
+			_show_item_popup()
+		else:
+			area.get_parent().get_node("SpriteHelp/AnimationPlayer").play("show")
 
 func on_close_item_popup():
 	popup_active = false
