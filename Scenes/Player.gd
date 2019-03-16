@@ -80,6 +80,7 @@ func _physics_process(delta):
 		#update player movement
 		velocity.y += GRAVITY	
 		velocity = move_and_slide(velocity, FLOOR)
+
 			
 func _move_left():
 	if not spring_back:

@@ -18,7 +18,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -335,6 +335,8 @@ position = Vector2( -30.5641, -97.6804 )
 position = Vector2( 362.975, 608.503 )
 
 [node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 4.19119, 2.39502 )
 
 [node name="Woodbox2" parent="Environment" index="1" instance=ExtResource( 12 )]
 
