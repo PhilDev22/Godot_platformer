@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/GUICanvasLayer.gd" type="Script" id=1]
+[ext_resource path="res://Assets/coins/MEDIUM_0006_Capa-7.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/dynamic_font_gabriola.tres" type="DynamicFont" id=3]
 
 [node name="GUICanvasLayer" type="CanvasLayer"]
 
@@ -10,5 +12,35 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 1235.73, 36.1994 )
+texture = ExtResource( 2 )
+
+[node name="LabelCoins" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1145.0
+margin_top = 5.0
+margin_right = 1207.0
+margin_bottom = 66.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.746094, 0.743179, 0.743179, 1 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
 

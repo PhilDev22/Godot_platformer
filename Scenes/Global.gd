@@ -3,6 +3,7 @@ extends Node
 var current_scene = null
 var current_level = -1
 var current_sword_id = -1
+var coins = 0
 
 func _ready():
 	var root = get_tree().get_root()
@@ -21,6 +22,10 @@ func load_next_level():
 func set_sword_id(id):
 	current_sword_id = id
 	
+func add_coin(count):
+	coins += 1
+	get_tree().get_root().find_node("GUICanvasLayer", true, false).update_coins()
+		
 func goto_scene(path):
     # This function will usually be called from a signal callback,
     # or some other function from the running scene.

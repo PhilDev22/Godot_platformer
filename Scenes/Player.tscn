@@ -31,15 +31,15 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "run",
-"speed": 7.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "jump",
 "speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
@@ -223,6 +223,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
+frame = 3
 playing = true
 _sections_unfolded = [ "Transform" ]
 

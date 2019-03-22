@@ -218,6 +218,10 @@ func _increase_life_permanent(amount):
 		lifes += 1
 		get_parent().get_node("GUICanvasLayer").add_heart()
 
+func _collect_coin(area):
+	area.get_owner().queue_free()
+	get_node("/root/Global").add_coin(1)
+	
 #reduce lifes, stop movement, play death animation		
 func _die():
 	lifes = 0
@@ -260,5 +264,7 @@ func _on_Area2D_area_entered(area):
 		_got_hurt_by_enemy(area)
 	elif area.name == "Area2D_PotionSmall":
 		_collect_potion_small(area)
+	elif area.name == "Area2D_Coin":
+		_collect_coin(area)
 	elif area.name == "Area2D_Exit":
 		_next_level()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -6,13 +6,14 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D"]
+[node name="Stage" type="Node2D" index="0"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -149,5 +150,29 @@ position = Vector2( 1125.71, 574.255 )
 [node name="Items" type="Node2D" parent="." index="7"]
 
 [node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 6 )]
+
+[node name="Coin" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 700, 500 )
+
+[node name="Coin2" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 580, 450 )
+
+[node name="Coin3" parent="." index="11" instance=ExtResource( 7 )]
+
+position = Vector2( 640, 450 )
+
+[node name="Coin4" parent="." index="12" instance=ExtResource( 7 )]
+
+position = Vector2( 580, 500 )
+
+[node name="Coin5" parent="." index="13" instance=ExtResource( 7 )]
+
+position = Vector2( 640, 500 )
+
+[node name="Coin6" parent="." index="14" instance=ExtResource( 7 )]
+
+position = Vector2( 700, 450 )
 
 

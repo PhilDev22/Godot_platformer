@@ -34,3 +34,7 @@ func add_heart():
 	add_child(heart)
 	max_hearts += 1
 	set_active_hearts(active_hearts + 1)
+	
+func update_coins():
+	$LabelCoins.text = str( get_node("/root/Global").coins )
+	
