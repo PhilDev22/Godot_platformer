@@ -181,7 +181,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -100, 0 ), Vector2( -100, 0 ), Vector2( 100, 0 ), Vector2( 100, 0 ) ]
 }
 
-[node name="EnemySkeleton" type="Node2D"]
+[node name="EnemySkeleton" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -211,7 +211,6 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 frames = SubResource( 2 )
 animation = "walk"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -236,7 +235,7 @@ root_node = NodePath("..")
 autoplay = "walk"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 2.0
 anims/die = SubResource( 4 )
 anims/hit = SubResource( 5 )
 anims/walk = SubResource( 6 )

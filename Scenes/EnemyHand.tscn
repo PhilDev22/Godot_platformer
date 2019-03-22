@@ -113,7 +113,6 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Spread"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 0, -50 )
 frames = SubResource( 1 )
 animation = "default"
 playing = true

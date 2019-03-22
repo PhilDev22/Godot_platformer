@@ -21,7 +21,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -547,6 +547,8 @@ position = Vector2( 916.396, -745.134 )
 position = Vector2( 2690.89, -679.243 )
 
 [node name="Coins" type="Node2D" parent="Items" index="2"]
+
+editor/display_folded = true
 
 [node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 13 )]
 

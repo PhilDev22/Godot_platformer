@@ -19,7 +19,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -298,6 +298,7 @@ position = Vector2( 2172.96, 576.306 )
 
 [node name="Enemies" type="Node2D" parent="." index="10"]
 
+editor/display_folded = true
 z_index = 15
 _sections_unfolded = [ "Z Index" ]
 
@@ -324,6 +325,8 @@ position = Vector2( 1973.07, 609.091 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Items" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
 
 [node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 10 )]
 
