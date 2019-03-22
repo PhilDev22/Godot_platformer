@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -12,7 +12,9 @@
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -70,6 +72,8 @@ __meta__ = {
 }
 
 [node name="Lights" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Light00" parent="Lights" index="0" instance=ExtResource( 3 )]
 
@@ -237,6 +241,7 @@ shape = SubResource( 1 )
 
 [node name="Obstacles" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 1088, 640 )
 
 [node name="Obstacle32" parent="Obstacles" index="0" instance=ExtResource( 7 )]
@@ -487,6 +492,7 @@ position = Vector2( 2176.73, 128.08 )
 
 [node name="Enemies" type="Node2D" parent="." index="10"]
 
+editor/display_folded = true
 z_index = 15
 _sections_unfolded = [ "Z Index" ]
 
@@ -494,41 +500,41 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 320.816, 338.07 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost2" parent="Enemies" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 431.312, -441.544 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost7" parent="Enemies" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 1952.32, -668.559 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost9" parent="Enemies" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 1333.35, -916.147 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost10" parent="Enemies" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 2423.01, -971.922 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost8" parent="Enemies" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 1777.28, -1182.51 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="EnemyGhost11" parent="Enemies" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 1684.78, -1238.29 )
 scale = Vector2( -1, 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Items" type="Node2D" parent="." index="11"]
 
@@ -540,6 +546,230 @@ position = Vector2( 916.396, -745.134 )
 
 position = Vector2( 2690.89, -679.243 )
 
-[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 13 )]
+[node name="Coins" type="Node2D" parent="Items" index="2"]
+
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 32.0609, 208.688 )
+
+[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 13 )]
+
+position = Vector2( 32.1535, 166.28 )
+
+[node name="Coin4" parent="Items/Coins" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -90 )
+
+[node name="Coin3" parent="Items/Coins" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -40 )
+
+[node name="Coin6" parent="Items/Coins" index="4" instance=ExtResource( 13 )]
+
+position = Vector2( 30, -290 )
+
+[node name="Coin7" parent="Items/Coins" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 30, -340 )
+
+[node name="Coin8" parent="Items/Coins" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -560 )
+
+[node name="Coin9" parent="Items/Coins" index="7" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -600 )
+
+[node name="Coin12" parent="Items/Coins" index="8" instance=ExtResource( 13 )]
+
+position = Vector2( 280, -680 )
+
+[node name="Coin13" parent="Items/Coins" index="9" instance=ExtResource( 13 )]
+
+position = Vector2( 350, -680 )
+
+[node name="Coin14" parent="Items/Coins" index="10" instance=ExtResource( 13 )]
+
+position = Vector2( 710, -770 )
+
+[node name="Coin15" parent="Items/Coins" index="11" instance=ExtResource( 13 )]
+
+position = Vector2( 780, -770 )
+
+[node name="Coin16" parent="Items/Coins" index="12" instance=ExtResource( 13 )]
+
+position = Vector2( 990, -770 )
+
+[node name="Coin17" parent="Items/Coins" index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 30, -390 )
+
+[node name="Coin18" parent="Items/Coins" index="14" instance=ExtResource( 13 )]
+
+position = Vector2( 30, -440 )
+
+[node name="Coin19" parent="Items/Coins" index="15" instance=ExtResource( 13 )]
+
+position = Vector2( 30, -490 )
+
+[node name="Coin20" parent="Items/Coins" index="16" instance=ExtResource( 13 )]
+
+position = Vector2( 580, -990 )
+
+[node name="Coin21" parent="Items/Coins" index="17" instance=ExtResource( 13 )]
+
+position = Vector2( 550, -990 )
+
+[node name="Coin5" parent="Items/Coins" index="18" instance=ExtResource( 13 )]
+
+position = Vector2( 150, -1250 )
+
+[node name="Coin10" parent="Items/Coins" index="19" instance=ExtResource( 13 )]
+
+position = Vector2( 190, -1250 )
+
+[node name="Coin11" parent="Items/Coins" index="20" instance=ExtResource( 13 )]
+
+position = Vector2( 150, -1210 )
+
+[node name="Coin22" parent="Items/Coins" index="21" instance=ExtResource( 13 )]
+
+position = Vector2( 190, -1210 )
+
+[node name="Coin23" parent="Items/Coins" index="22" instance=ExtResource( 13 )]
+
+position = Vector2( 660, -1310 )
+
+[node name="Coin24" parent="Items/Coins" index="23" instance=ExtResource( 13 )]
+
+position = Vector2( 740, -1310 )
+
+[node name="Coin25" parent="Items/Coins" index="24" instance=ExtResource( 13 )]
+
+position = Vector2( 810, -1310 )
+
+[node name="Coin26" parent="Items/Coins" index="25" instance=ExtResource( 13 )]
+
+position = Vector2( 880, -1310 )
+
+[node name="Coin27" parent="Items/Coins" index="26" instance=ExtResource( 13 )]
+
+position = Vector2( 1460, -900 )
+
+[node name="Coin28" parent="Items/Coins" index="27" instance=ExtResource( 13 )]
+
+position = Vector2( 1510, -900 )
+
+[node name="Coin29" parent="Items/Coins" index="28" instance=ExtResource( 13 )]
+
+position = Vector2( 1460, -850 )
+
+[node name="Coin30" parent="Items/Coins" index="29" instance=ExtResource( 13 )]
+
+position = Vector2( 1510, -850 )
+
+[node name="Coin31" parent="Items/Coins" index="30" instance=ExtResource( 13 )]
+
+position = Vector2( 1280, -1250 )
+
+[node name="Coin32" parent="Items/Coins" index="31" instance=ExtResource( 13 )]
+
+position = Vector2( 1330, -1250 )
+
+[node name="Coin33" parent="Items/Coins" index="32" instance=ExtResource( 13 )]
+
+position = Vector2( 1280, -1200 )
+
+[node name="Coin34" parent="Items/Coins" index="33" instance=ExtResource( 13 )]
+
+position = Vector2( 1330, -1200 )
+
+[node name="Coin35" parent="Items/Coins" index="34" instance=ExtResource( 13 )]
+
+position = Vector2( 2250, -1080 )
+
+[node name="Coin36" parent="Items/Coins" index="35" instance=ExtResource( 13 )]
+
+position = Vector2( 2250, -1140 )
+
+[node name="Coin37" parent="Items/Coins" index="36" instance=ExtResource( 13 )]
+
+position = Vector2( 2320, -1140 )
+
+[node name="Coin38" parent="Items/Coins" index="37" instance=ExtResource( 13 )]
+
+position = Vector2( 2320, -1080 )
+
+[node name="Coin39" parent="Items/Coins" index="38" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -920 )
+
+[node name="Coin40" parent="Items/Coins" index="39" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -850 )
+
+[node name="Coin41" parent="Items/Coins" index="40" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -790 )
+
+[node name="Coin42" parent="Items/Coins" index="41" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -510 )
+
+[node name="Coin43" parent="Items/Coins" index="42" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -450 )
+
+[node name="Coin44" parent="Items/Coins" index="43" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -390 )
+
+[node name="Coin45" parent="Items/Coins" index="44" instance=ExtResource( 13 )]
+
+position = Vector2( 2690, -330 )
+
+[node name="Coin46" parent="Items/Coins" index="45" instance=ExtResource( 13 )]
+
+position = Vector2( 1450, -290 )
+
+[node name="Coin47" parent="Items/Coins" index="46" instance=ExtResource( 13 )]
+
+position = Vector2( 1490, -290 )
+
+[node name="Coin48" parent="Items/Coins" index="47" instance=ExtResource( 13 )]
+
+position = Vector2( 1450, -250 )
+
+[node name="Coin49" parent="Items/Coins" index="48" instance=ExtResource( 13 )]
+
+position = Vector2( 1490, -250 )
+
+[node name="Coin50" parent="Items/Coins" index="49" instance=ExtResource( 13 )]
+
+position = Vector2( 1870, -250 )
+
+[node name="Coin51" parent="Items/Coins" index="50" instance=ExtResource( 13 )]
+
+position = Vector2( 1810, -250 )
+
+[node name="Coin52" parent="Items/Coins" index="51" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -140 )
+
+[node name="Coin53" parent="Items/Coins" index="52" instance=ExtResource( 13 )]
+
+position = Vector2( 610, -190 )
+
+[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 14 )]
+
+[node name="Environment" type="Node2D" parent="." index="13"]
+
+[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 15 )]
+
+position = Vector2( 2144.88, -31.3604 )
+
+[node name="Woodbox2" parent="Environment" index="1" instance=ExtResource( 15 )]
+
+position = Vector2( 2209.12, -31.3604 )
 
 

@@ -29,7 +29,6 @@ radius = 11.9854
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 5
 playing = true
 
 [node name="Area2D_Coin" type="Area2D" parent="." index="1"]

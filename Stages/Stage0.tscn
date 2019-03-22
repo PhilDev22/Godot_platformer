@@ -5,8 +5,8 @@
 [ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -149,30 +149,32 @@ position = Vector2( 1125.71, 574.255 )
 
 [node name="Items" type="Node2D" parent="." index="7"]
 
-[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 6 )]
+[node name="Coins" type="Node2D" parent="Items" index="0"]
 
-[node name="Coin" parent="." index="9" instance=ExtResource( 7 )]
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 700, 500 )
 
-[node name="Coin2" parent="." index="10" instance=ExtResource( 7 )]
+[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 580, 450 )
 
-[node name="Coin3" parent="." index="11" instance=ExtResource( 7 )]
+[node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 640, 450 )
 
-[node name="Coin4" parent="." index="12" instance=ExtResource( 7 )]
+[node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 580, 500 )
 
-[node name="Coin5" parent="." index="13" instance=ExtResource( 7 )]
+[node name="Coin5" parent="Items/Coins" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 640, 500 )
 
-[node name="Coin6" parent="." index="14" instance=ExtResource( 7 )]
+[node name="Coin6" parent="Items/Coins" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 700, 450 )
+
+[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 7 )]
 
 
