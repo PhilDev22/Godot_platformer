@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.3, 0.5 ), Vector2( 0.3, 0.45 ), Vector2( 0.3, 0.5 ) ]
 }
 
-[node name="Light2D" type="Light2D" index="0"]
+[node name="Light2D" type="Light2D"]
 
 enabled = true
 editor_only = false
