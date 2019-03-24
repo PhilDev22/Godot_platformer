@@ -1,7 +1,7 @@
 extends Node
 
 var current_scene = null
-var current_level = 4
+var current_level = 5
 var current_sword_id = 1
 var coins = 0
 

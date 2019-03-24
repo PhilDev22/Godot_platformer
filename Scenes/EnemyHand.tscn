@@ -29,7 +29,7 @@ extents = Vector2( 17.8616, 48.4592 )
 [sub_resource type="Animation" id=3]
 
 resource_name = "show"
-length = 5.0
+length = 4.3
 loop = true
 step = 0.05
 tracks/0/type = "value"
@@ -39,7 +39,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.5, 0.65, 2.5, 2.75, 5 ),
+"times": PoolRealArray( 0, 0.05, 0.5, 0.65, 2.5, 2.75, 4.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -50 ), Vector2( 0, -50 ), Vector2( 0, -95 ), Vector2( 0, -95 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
@@ -113,8 +113,10 @@ _sections_unfolded = [ "Emission Shape", "Gravity", "Initial Velocity", "Spread"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 0, -95 )
 frames = SubResource( 1 )
-animation = "default"
+animation = "grab"
+frame = 10
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -148,7 +150,7 @@ blend_times = [  ]
 
 emitting = false
 amount = 10
-lifetime = 4.0
+lifetime = 3.0
 one_shot = true
 preprocess = 0.0
 speed_scale = 4.0

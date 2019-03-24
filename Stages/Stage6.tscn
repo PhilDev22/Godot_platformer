@@ -1,0 +1,1179 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/ObstacleSpikes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/ObstacleSaw.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Stage" type="Node2D" index="0"]
+
+[node name="TileMapBackground" type="TileMap" parent="." index="0"]
+
+position = Vector2( 0, 64 )
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 4, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 17, 4, 0, 18, 4, 0, 19, 4, 0, 65536, 4, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 65551, 4, 0, 65552, 4, 0, 65553, 4, 0, 65554, 4, 0, 65555, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 4, 0, 131083, 4, 0, 131084, 4, 0, 131085, 4, 0, 131086, 4, 0, 131087, 4, 0, 131088, 9, 0, 131089, 4, 0, 131090, 4, 0, 131091, 4, 0, 196608, 4, 0, 196609, 4, 0, 196610, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 4, 0, 196621, 4, 0, 196622, 4, 0, 196623, 4, 0, 196624, 4, 0, 196625, 4, 0, 196626, 4, 0, 196627, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 4, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 4, 0, 262152, 4, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 4, 0, 262159, 4, 0, 262160, 4, 0, 262161, 4, 0, 262162, 4, 0, 262163, 4, 0, 327680, 4, 0, 327681, 4, 0, 327682, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 327687, 4, 0, 327688, 10, 0, 327689, 4, 0, 327690, 4, 0, 327691, 10, 0, 327692, 4, 0, 327693, 4, 0, 327694, 4, 0, 327695, 4, 0, 327696, 4, 0, 327697, 4, 0, 327698, 4, 0, 327699, 4, 0, 327700, 5, 0, 393216, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 393220, 4, 0, 393221, 4, 0, 393222, 4, 0, 393223, 4, 0, 393225, 4, 0, 393226, 4, 0, 393228, 4, 0, 393229, 4, 0, 393230, 4, 0, 393231, 4, 0, 393232, 4, 0, 393233, 4, 0, 393234, 4, 0, 393235, 4, 0, 393236, 4, 0, 458752, 4, 0, 458753, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458759, 4, 0, 458760, 4, 0, 458761, 4, 0, 458762, 4, 0, 458763, 4, 0, 458764, 4, 0, 458765, 4, 0, 458766, 4, 0, 458767, 4, 0, 458768, 4, 0, 458769, 4, 0, 458770, 4, 0, 458771, 4, 0, 458772, 4, 0, 524288, 4, 0, 524289, 4, 0, 524290, 4, 0, 524291, 4, 0, 524292, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524296, 4, 0, 524297, 4, 0, 524298, 4, 0, 524299, 4, 0, 524300, 4, 0, 524301, 4, 0, 524302, 4, 0, 524303, 4, 0, 524304, 4, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 524308, 4, 0, 589824, 4, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589831, 4, 0, 589832, 4, 0, 589833, 4, 0, 589834, 4, 0, 589835, 4, 0, 589836, 4, 0, 589837, 4, 0, 589838, 4, 0, 589839, 4, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 655367, 4, 0, 655368, 4, 0, 655369, 4, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655380, 4, 0, 720902, 4, 0, 720903, 4, 0, 720904, 4, 0, 720905, 4, 0, 720906, 4, 0, 720907, 4, 0, 720908, 4, 0, 720909, 4, 0, 720910, 4, 0, 720911, 4, 0, 720912, 4, 0, 720913, 4, 0, 720914, 4, 0, 720915, 4, 0, 720916, 4, 0, 786438, 4, 0, 786439, 4, 0, 786440, 4, 0, 786441, 4, 0, 786442, 4, 0, 786443, 4, 0, 786444, 4, 0, 786445, 4, 0, 786446, 4, 0, 786447, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 786451, 4, 0, 786452, 4, 0, 851974, 4, 0, 851975, 4, 0, 851976, 4, 0, 851977, 4, 0, 851978, 4, 0, 851979, 4, 0, 851980, 4, 0, 851981, 4, 0, 851982, 4, 0, 851983, 4, 0, 851984, 4, 0, 851985, 4, 0, 851986, 4, 0, 851987, 4, 0, 851988, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 4, 0, 917522, 4, 0, 917523, 4, 0, 917524, 4, 0, 983046, 4, 0, 983047, 4, 0, 983048, 4, 0, 983049, 4, 0, 983050, 4, 0, 983051, 4, 0, 983052, 4, 0, 983053, 4, 0, 983054, 4, 0, 983055, 4, 0, 983056, 4, 0, 983057, 4, 0, 983058, 4, 0, 983059, 4, 0, 983060, 4, 0, 1048582, 4, 0, 1048583, 4, 0, 1048584, 4, 0, 1048585, 4, 0, 1048586, 4, 0, 1048587, 4, 0, 1048588, 4, 0, 1048589, 4, 0, 1048590, 4, 0, 1048591, 4, 0, 1048592, 4, 0, 1048593, 4, 0, 1048594, 4, 0, 1048595, 4, 0, 1048596, 4, 0, 1114118, 4, 0, 1114119, 4, 0, 1114120, 4, 0, 1114121, 4, 0, 1114122, 4, 0, 1114123, 4, 0, 1114124, 4, 0, 1114125, 4, 0, 1114126, 4, 0, 1114127, 4, 0, 1114128, 4, 0, 1114129, 4, 0, 1114130, 4, 0, 1114131, 4, 0, 1114132, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0, 1179667, 4, 0, 1179668, 4, 0, 1245190, 4, 0, 1245191, 4, 0, 1245192, 4, 0, 1245193, 4, 0, 1245194, 4, 0, 1245195, 4, 0, 1245196, 4, 0, 1245197, 4, 0, 1245198, 4, 0, 1245199, 4, 0, 1245200, 4, 0, 1245201, 4, 0, 1245202, 4, 0, 1245203, 4, 0, 1245204, 4, 0, 1310726, 4, 0, 1310727, 4, 0, 1310728, 4, 0, 1310729, 4, 0, 1310730, 4, 0, 1310731, 4, 0, 1310732, 4, 0, 1310733, 4, 0, 1310734, 4, 0, 1310735, 4, 0, 1310736, 4, 0, 1310737, 4, 0, 1310738, 4, 0, 1310739, 4, 0, 1310740, 4, 0, 1376262, 4, 0, 1376263, 4, 0, 1376264, 4, 0, 1376265, 4, 0, 1376266, 4, 0, 1376267, 4, 0, 1376268, 4, 0, 1376269, 4, 0, 1376270, 4, 0, 1376271, 4, 0, 1376272, 4, 0, 1376273, 4, 0, 1376274, 4, 0, 1376275, 4, 0, 1376276, 4, 0, 1441798, 4, 0, 1441799, 4, 0, 1441800, 4, 0, 1441801, 4, 0, 1441802, 4, 0, 1441803, 4, 0, 1441804, 4, 0, 1441805, 4, 0, 1441806, 4, 0, 1441807, 4, 0, 1441808, 4, 0, 1441809, 4, 0, 1441810, 4, 0, 1441811, 4, 0, 1441812, 4, 0, 1507334, 4, 0, 1507335, 4, 0, 1507336, 4, 0, 1507337, 4, 0, 1507338, 4, 0, 1507339, 4, 0, 1507340, 4, 0, 1507341, 4, 0, 1507342, 4, 0, 1507343, 4, 0, 1507344, 4, 0, 1507345, 4, 0, 1507346, 4, 0, 1507347, 4, 0, 1507348, 4, 0, 1572870, 4, 0, 1572871, 4, 0, 1572872, 4, 0, 1572873, 4, 0, 1572874, 4, 0, 1572875, 4, 0, 1572876, 4, 0, 1572877, 4, 0, 1572878, 4, 0, 1572879, 4, 0, 1572880, 4, 0, 1572881, 4, 0, 1572882, 4, 0, 1572883, 4, 0, 1572884, 4, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Occluder" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( 0, 64 )
+z_index = 1
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -2, 4, 0, -1, 4, 0, -65536, 5, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, -65517, 3, 0, -65516, 4, 0, -65515, 4, 0, 65534, 4, 0, 65535, 4, 0, 0, 5, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 17, 4, 0, 18, 4, 0, 19, 3, 0, 20, 4, 0, 21, 4, 0, 131070, 4, 0, 131071, 4, 0, 65536, 5, 0, 65537, 4, 0, 65538, 4, 0, 65539, 4, 0, 65540, 4, 0, 65541, 4, 0, 65542, 4, 0, 65543, 4, 0, 65544, 4, 0, 65545, 4, 0, 65546, 4, 0, 65547, 4, 0, 65548, 4, 0, 65549, 4, 0, 65550, 4, 0, 65551, 4, 0, 65552, 4, 0, 65553, 4, 0, 65554, 4, 0, 65555, 3, 0, 65556, 4, 0, 65557, 4, 0, 196606, 4, 0, 196607, 4, 0, 131072, 5, 0, 131091, 3, 0, 131092, 4, 0, 131093, 4, 0, 262142, 4, 0, 262143, 4, 0, 196608, 5, 0, 196627, 3, 0, 196628, 4, 0, 196629, 4, 0, 327678, 4, 0, 327679, 4, 0, 262144, 5, 0, 262163, 3, 0, 262164, 4, 0, 262165, 4, 0, 393214, 4, 0, 393215, 4, 0, 327680, 5, 0, 327699, 3, 0, 327700, 4, 0, 327701, 4, 0, 458750, 4, 0, 458751, 4, 0, 393216, 5, 0, 393235, 3, 0, 393236, 4, 0, 393237, 4, 0, 524286, 4, 0, 524287, 4, 0, 458752, 5, 0, 458771, 3, 0, 458772, 4, 0, 458773, 4, 0, 589822, 4, 0, 589823, 4, 0, 524288, 5, 0, 524307, 3, 0, 524308, 4, 0, 524309, 4, 0, 655358, 4, 0, 655359, 4, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589843, 1, 0, 589844, 4, 0, 589845, 4, 0, 720894, 4, 0, 720895, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 655365, 4, 0, 655366, 4, 0, 655379, 4, 0, 655380, 4, 0, 655381, 4, 0, 786430, 4, 0, 786431, 4, 0, 720896, 4, 0, 720897, 4, 0, 720898, 4, 0, 720899, 4, 0, 720900, 4, 0, 720901, 5, 0, 720916, 3, 0, 720917, 4, 0, 851966, 4, 0, 851967, 4, 0, 786432, 4, 0, 786433, 4, 0, 786434, 4, 0, 786435, 4, 0, 786436, 4, 0, 786437, 5, 0, 786452, 3, 0, 786453, 4, 0, 917502, 4, 0, 917503, 4, 0, 851968, 4, 0, 851969, 4, 0, 851970, 4, 0, 851971, 4, 0, 851972, 4, 0, 851973, 5, 0, 851988, 3, 0, 851989, 4, 0, 983038, 4, 0, 983039, 4, 0, 917504, 4, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 4, 0, 917509, 5, 0, 917524, 3, 0, 917525, 4, 0, 1048574, 4, 0, 1048575, 4, 0, 983040, 4, 0, 983041, 4, 0, 983042, 4, 0, 983043, 4, 0, 983044, 4, 0, 983045, 5, 0, 983060, 3, 0, 983061, 4, 0, 1114110, 4, 0, 1114111, 4, 0, 1048576, 4, 0, 1048577, 4, 0, 1048578, 4, 0, 1048579, 4, 0, 1048580, 4, 0, 1048581, 5, 0, 1048596, 3, 0, 1048597, 4, 0, 1179646, 4, 0, 1179647, 4, 0, 1114112, 4, 0, 1114113, 4, 0, 1114114, 4, 0, 1114115, 4, 0, 1114116, 4, 0, 1114117, 5, 0, 1114132, 3, 0, 1114133, 4, 0, 1245182, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 5, 0, 1179668, 3, 0, 1179669, 4, 0, 1310718, 4, 0, 1310719, 4, 0, 1245184, 4, 0, 1245185, 4, 0, 1245186, 4, 0, 1245187, 4, 0, 1245188, 4, 0, 1245189, 5, 0, 1245204, 3, 0, 1245205, 4, 0, 1376254, 4, 0, 1376255, 4, 0, 1310720, 4, 0, 1310721, 4, 0, 1310722, 4, 0, 1310723, 4, 0, 1310724, 4, 0, 1310725, 5, 0, 1310740, 3, 0, 1310741, 4, 0, 1441790, 4, 0, 1441791, 4, 0, 1376256, 4, 0, 1376257, 4, 0, 1376258, 4, 0, 1376259, 4, 0, 1376260, 4, 0, 1376261, 5, 0, 1376276, 3, 0, 1376277, 4, 0, 1507326, 4, 0, 1507327, 4, 0, 1441792, 4, 0, 1441793, 4, 0, 1441794, 4, 0, 1441795, 4, 0, 1441796, 4, 0, 1441797, 5, 0, 1441812, 3, 0, 1441813, 4, 0, 1572862, 4, 0, 1572863, 4, 0, 1507328, 4, 0, 1507329, 4, 0, 1507330, 4, 0, 1507331, 4, 0, 1507332, 4, 0, 1507333, 5, 0, 1507348, 3, 0, 1507349, 4, 0, 1638398, 4, 0, 1638399, 4, 0, 1572864, 4, 0, 1572865, 4, 0, 1572866, 4, 0, 1572867, 4, 0, 1572868, 4, 0, 1572869, 5, 0, 1572876, 0, 0, 1572877, 2, 0, 1572884, 3, 0, 1572885, 4, 0, 1703934, 4, 0, 1703935, 4, 0, 1638400, 4, 0, 1638401, 4, 0, 1638402, 4, 0, 1638403, 4, 0, 1638404, 4, 0, 1638405, 4, 0, 1638406, 4, 0, 1638407, 4, 0, 1638408, 4, 0, 1638409, 4, 0, 1638410, 4, 0, 1638411, 4, 0, 1638412, 4, 0, 1638413, 4, 0, 1638414, 4, 0, 1638415, 4, 0, 1638416, 4, 0, 1638417, 4, 0, 1638418, 4, 0, 1638419, 4, 0, 1638420, 4, 0, 1638421, 4, 0, 1703936, 4, 0, 1703937, 4, 0, 1703938, 4, 0, 1703939, 4, 0, 1703940, 4, 0, 1703941, 4, 0, 1703942, 4, 0, 1703943, 4, 0, 1703944, 4, 0, 1703945, 4, 0, 1703946, 4, 0, 1703947, 4, 0, 1703948, 4, 0, 1703949, 4, 0, 1703950, 4, 0, 1703951, 4, 0, 1703952, 4, 0, 1703953, 4, 0, 1703954, 4, 0, 1703955, 4, 0, 1703956, 4, 0, 1703957, 4, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Occluder", "Z Index" ]
+
+[node name="Lights" type="Node2D" parent="." index="2"]
+
+[node name="Light00" parent="Lights" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 272, 464 )
+
+[node name="Light01" parent="Lights" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1024, 464 )
+
+[node name="Light02" parent="Lights" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 1040, 1168 )
+
+[node name="Light07" parent="Lights" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 1088, 1472 )
+
+[node name="Light03" parent="Lights" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 592, 992 )
+
+[node name="Light06" parent="Lights" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 592, 1488 )
+
+[node name="Light05" parent="Lights" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 640, 288 )
+
+[node name="Light04" parent="Lights" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 944, 704 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 193.225, 530.322 )
+z_index = 10
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="5"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 1300
+limit_bottom = 1790
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.1
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="4"]
+
+show_behind_parent = true
+color = Color( 0.226563, 0.226563, 0.226563, 1 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D_Start" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 185.136, 512 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Start" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Exit" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 832, 1536 )
+
+[node name="Items" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="Coins" type="Node2D" parent="Items" index="0"]
+
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 632, 882 )
+
+[node name="Coin7" parent="Items/Coins" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 1112, 1058 )
+
+[node name="Coin29" parent="Items/Coins" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 1112, 962 )
+
+[node name="Coin17" parent="Items/Coins" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 904, 1346 )
+
+[node name="Coin2" parent="Items/Coins" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 512, 832 )
+
+[node name="Coin11" parent="Items/Coins" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 992, 1008 )
+
+[node name="Coin27" parent="Items/Coins" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 992, 912 )
+
+[node name="Coin18" parent="Items/Coins" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 784, 1296 )
+
+[node name="Coin34" parent="Items/Coins" index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 592, 1456 )
+
+[node name="Coin3" parent="Items/Coins" index="9" instance=ExtResource( 6 )]
+
+position = Vector2( 572, 832 )
+
+[node name="Coin10" parent="Items/Coins" index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 1052, 1008 )
+
+[node name="Coin28" parent="Items/Coins" index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 1052, 912 )
+
+[node name="Coin15" parent="Items/Coins" index="12" instance=ExtResource( 6 )]
+
+position = Vector2( 844, 1296 )
+
+[node name="Coin35" parent="Items/Coins" index="13" instance=ExtResource( 6 )]
+
+position = Vector2( 652, 1456 )
+
+[node name="Coin4" parent="Items/Coins" index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 512, 882 )
+
+[node name="Coin9" parent="Items/Coins" index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 992, 1058 )
+
+[node name="Coin30" parent="Items/Coins" index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 992, 962 )
+
+[node name="Coin13" parent="Items/Coins" index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 784, 1346 )
+
+[node name="Coin33" parent="Items/Coins" index="18" instance=ExtResource( 6 )]
+
+position = Vector2( 592, 1506 )
+
+[node name="Coin5" parent="Items/Coins" index="19" instance=ExtResource( 6 )]
+
+position = Vector2( 572, 882 )
+
+[node name="Coin12" parent="Items/Coins" index="20" instance=ExtResource( 6 )]
+
+position = Vector2( 1052, 1058 )
+
+[node name="Coin31" parent="Items/Coins" index="21" instance=ExtResource( 6 )]
+
+position = Vector2( 1052, 962 )
+
+[node name="Coin16" parent="Items/Coins" index="22" instance=ExtResource( 6 )]
+
+position = Vector2( 844, 1346 )
+
+[node name="Coin39" parent="Items/Coins" index="23" instance=ExtResource( 6 )]
+
+position = Vector2( 652, 1506 )
+
+[node name="Coin6" parent="Items/Coins" index="24" instance=ExtResource( 6 )]
+
+position = Vector2( 632, 832 )
+
+[node name="Coin8" parent="Items/Coins" index="25" instance=ExtResource( 6 )]
+
+position = Vector2( 1112, 1008 )
+
+[node name="Coin32" parent="Items/Coins" index="26" instance=ExtResource( 6 )]
+
+position = Vector2( 1112, 912 )
+
+[node name="Coin14" parent="Items/Coins" index="27" instance=ExtResource( 6 )]
+
+position = Vector2( 904, 1296 )
+
+[node name="Coin19" parent="Items/Coins" index="28" instance=ExtResource( 6 )]
+
+position = Vector2( 960, 1296 )
+
+[node name="Coin20" parent="Items/Coins" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 960, 1344 )
+
+[node name="Coin21" parent="Items/Coins" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 736, 1296 )
+
+[node name="Coin36" parent="Items/Coins" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 544, 1456 )
+
+[node name="Coin25" parent="Items/Coins" index="32" instance=ExtResource( 6 )]
+
+position = Vector2( 688, 1296 )
+
+[node name="Coin37" parent="Items/Coins" index="33" instance=ExtResource( 6 )]
+
+position = Vector2( 496, 1456 )
+
+[node name="Coin26" parent="Items/Coins" index="34" instance=ExtResource( 6 )]
+
+position = Vector2( 688, 1344 )
+
+[node name="Coin38" parent="Items/Coins" index="35" instance=ExtResource( 6 )]
+
+position = Vector2( 496, 1504 )
+
+[node name="Coin22" parent="Items/Coins" index="36" instance=ExtResource( 6 )]
+
+position = Vector2( 736, 1344 )
+
+[node name="Coin40" parent="Items/Coins" index="37" instance=ExtResource( 6 )]
+
+position = Vector2( 544, 1504 )
+
+[node name="Coin23" parent="Items/Coins" index="38" instance=ExtResource( 6 )]
+
+position = Vector2( 1008, 1296 )
+
+[node name="Coin24" parent="Items/Coins" index="39" instance=ExtResource( 6 )]
+
+position = Vector2( 1008, 1344 )
+
+[node name="PotionSmall2" parent="Items" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 432, 928 )
+
+[node name="PotionSmall3" parent="Items" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 416, 1488 )
+
+[node name="PotionSmall" parent="Items/PotionSmall3" index="1" instance=ExtResource( 7 )]
+
+position = Vector2( 544, -288 )
+
+[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 8 )]
+
+[node name="Enemies" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 592, 928 )
+
+[node name="EnemyGhost5" parent="Enemies" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 640, 640 )
+
+[node name="EnemyGhost6" parent="Enemies" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 904.225, 644.081 )
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Material", "Transform" ]
+
+[node name="EnemyGhost2" parent="Enemies" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 912, 1008 )
+
+[node name="EnemyGhost3" parent="Enemies" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 592, 1248 )
+
+[node name="EnemyGhost4" parent="Enemies" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 1120, 1376 )
+
+[node name="Obstacles" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
+
+[node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 384, 1600 )
+
+[node name="Obstacle09" parent="Obstacles" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 960, 1600 )
+
+[node name="Obstacle12" parent="Obstacles" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 896, 1600 )
+
+[node name="Obstacle03" parent="Obstacles" index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 512, 1600 )
+
+[node name="Obstacle08" parent="Obstacles" index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 1088, 1600 )
+
+[node name="Obstacle05" parent="Obstacles" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 640, 1600 )
+
+[node name="Obstacle11" parent="Obstacles" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 1216, 1600 )
+
+[node name="Obstacle01" parent="Obstacles" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( 448, 1600 )
+
+[node name="Obstacle07" parent="Obstacles" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( 1024, 1600 )
+
+[node name="Obstacle02" parent="Obstacles" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( 576, 1600 )
+
+[node name="Obstacle06" parent="Obstacles" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( 1152, 1600 )
+
+[node name="Obstacle04" parent="Obstacles" index="11" instance=ExtResource( 10 )]
+
+position = Vector2( 704, 1600 )
+
+[node name="Obstacle10" parent="Obstacles" index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 1280, 1600 )
+
+[node name="ObstacleSaw" parent="Obstacles" index="13" instance=ExtResource( 11 )]
+
+position = Vector2( 1216, 1040 )
+
+[node name="ObstacleSaw2" parent="Obstacles" index="14" instance=ExtResource( 11 )]
+
+position = Vector2( 480, 1072 )
+
+[node name="ObstacleSaw3" parent="Obstacles" index="15" instance=ExtResource( 11 )]
+
+position = Vector2( 832, 1168 )
+
+[node name="ObstacleSaw4" parent="Obstacles" index="16" instance=ExtResource( 11 )]
+
+position = Vector2( 1056, 816 )
+
+[node name="Environment" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
+z_index = 2
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 800 )
+
+[node name="Woodbox39" parent="Environment" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 992 )
+
+[node name="Woodbox47" parent="Environment" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 992 )
+
+[node name="Woodbox49" parent="Environment" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 992 )
+
+[node name="Woodbox55" parent="Environment" index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 992 )
+
+[node name="Woodbox63" parent="Environment" index="5" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 992 )
+
+[node name="Woodbox71" parent="Environment" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 992 )
+
+[node name="Woodbox77" parent="Environment" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 800 )
+
+[node name="Woodbox80" parent="Environment" index="8" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 992 )
+
+[node name="Woodbox86" parent="Environment" index="9" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1184 )
+
+[node name="Woodbox92" parent="Environment" index="10" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1376 )
+
+[node name="Woodbox97" parent="Environment" index="11" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1184 )
+
+[node name="Woodbox107" parent="Environment" index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1376 )
+
+[node name="Woodbox110" parent="Environment" index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1184 )
+
+[node name="Woodbox116" parent="Environment" index="14" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1376 )
+
+[node name="Woodbox124" parent="Environment" index="15" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1184 )
+
+[node name="Woodbox131" parent="Environment" index="16" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1376 )
+
+[node name="Woodbox135" parent="Environment" index="17" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1184 )
+
+[node name="Woodbox142" parent="Environment" index="18" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1376 )
+
+[node name="Woodbox149" parent="Environment" index="19" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1184 )
+
+[node name="Woodbox153" parent="Environment" index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1376 )
+
+[node name="Woodbox162" parent="Environment" index="21" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1184 )
+
+[node name="Woodbox164" parent="Environment" index="22" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1376 )
+
+[node name="Woodbox13" parent="Environment" index="23" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 800 )
+
+[node name="Woodbox25" parent="Environment" index="24" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 800 )
+
+[node name="Woodbox30" parent="Environment" index="25" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 800 )
+
+[node name="Woodbox2" parent="Environment" index="26" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 864 )
+
+[node name="Woodbox42" parent="Environment" index="27" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1056 )
+
+[node name="Woodbox45" parent="Environment" index="28" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1056 )
+
+[node name="Woodbox51" parent="Environment" index="29" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1056 )
+
+[node name="Woodbox60" parent="Environment" index="30" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1056 )
+
+[node name="Woodbox62" parent="Environment" index="31" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1056 )
+
+[node name="Woodbox68" parent="Environment" index="32" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1056 )
+
+[node name="Woodbox74" parent="Environment" index="33" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 864 )
+
+[node name="Woodbox79" parent="Environment" index="34" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1056 )
+
+[node name="Woodbox85" parent="Environment" index="35" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1248 )
+
+[node name="Woodbox91" parent="Environment" index="36" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1440 )
+
+[node name="Woodbox101" parent="Environment" index="37" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1248 )
+
+[node name="Woodbox108" parent="Environment" index="38" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1440 )
+
+[node name="Woodbox109" parent="Environment" index="39" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1248 )
+
+[node name="Woodbox115" parent="Environment" index="40" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1440 )
+
+[node name="Woodbox122" parent="Environment" index="41" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1248 )
+
+[node name="Woodbox129" parent="Environment" index="42" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1440 )
+
+[node name="Woodbox136" parent="Environment" index="43" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1248 )
+
+[node name="Woodbox141" parent="Environment" index="44" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1440 )
+
+[node name="Woodbox145" parent="Environment" index="45" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1248 )
+
+[node name="Woodbox152" parent="Environment" index="46" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1440 )
+
+[node name="Woodbox157" parent="Environment" index="47" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1248 )
+
+[node name="Woodbox165" parent="Environment" index="48" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1440 )
+
+[node name="Woodbox17" parent="Environment" index="49" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 864 )
+
+[node name="Woodbox27" parent="Environment" index="50" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 864 )
+
+[node name="Woodbox28" parent="Environment" index="51" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 864 )
+
+[node name="Woodbox3" parent="Environment" index="52" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 800 )
+
+[node name="Woodbox40" parent="Environment" index="53" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 992 )
+
+[node name="Woodbox46" parent="Environment" index="54" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 992 )
+
+[node name="Woodbox52" parent="Environment" index="55" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 992 )
+
+[node name="Woodbox57" parent="Environment" index="56" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 992 )
+
+[node name="Woodbox66" parent="Environment" index="57" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 992 )
+
+[node name="Woodbox67" parent="Environment" index="58" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 992 )
+
+[node name="Woodbox73" parent="Environment" index="59" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 800 )
+
+[node name="Woodbox81" parent="Environment" index="60" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 992 )
+
+[node name="Woodbox89" parent="Environment" index="61" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1184 )
+
+[node name="Woodbox94" parent="Environment" index="62" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1376 )
+
+[node name="Woodbox98" parent="Environment" index="63" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1184 )
+
+[node name="Woodbox103" parent="Environment" index="64" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1376 )
+
+[node name="Woodbox114" parent="Environment" index="65" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1184 )
+
+[node name="Woodbox120" parent="Environment" index="66" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1376 )
+
+[node name="Woodbox126" parent="Environment" index="67" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1184 )
+
+[node name="Woodbox132" parent="Environment" index="68" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1376 )
+
+[node name="Woodbox138" parent="Environment" index="69" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1184 )
+
+[node name="Woodbox144" parent="Environment" index="70" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1376 )
+
+[node name="Woodbox148" parent="Environment" index="71" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1184 )
+
+[node name="Woodbox154" parent="Environment" index="72" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1376 )
+
+[node name="Woodbox161" parent="Environment" index="73" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1184 )
+
+[node name="Woodbox167" parent="Environment" index="74" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1376 )
+
+[node name="Woodbox14" parent="Environment" index="75" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 800 )
+
+[node name="Woodbox20" parent="Environment" index="76" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 800 )
+
+[node name="Woodbox34" parent="Environment" index="77" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 800 )
+
+[node name="Woodbox4" parent="Environment" index="78" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 864 )
+
+[node name="Woodbox38" parent="Environment" index="79" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1056 )
+
+[node name="Woodbox48" parent="Environment" index="80" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1056 )
+
+[node name="Woodbox50" parent="Environment" index="81" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1056 )
+
+[node name="Woodbox56" parent="Environment" index="82" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1056 )
+
+[node name="Woodbox64" parent="Environment" index="83" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1056 )
+
+[node name="Woodbox70" parent="Environment" index="84" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1056 )
+
+[node name="Woodbox76" parent="Environment" index="85" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 864 )
+
+[node name="Woodbox83" parent="Environment" index="86" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1056 )
+
+[node name="Woodbox90" parent="Environment" index="87" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1248 )
+
+[node name="Woodbox96" parent="Environment" index="88" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1440 )
+
+[node name="Woodbox100" parent="Environment" index="89" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1248 )
+
+[node name="Woodbox106" parent="Environment" index="90" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1440 )
+
+[node name="Woodbox113" parent="Environment" index="91" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1248 )
+
+[node name="Woodbox117" parent="Environment" index="92" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1440 )
+
+[node name="Woodbox123" parent="Environment" index="93" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1248 )
+
+[node name="Woodbox130" parent="Environment" index="94" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1440 )
+
+[node name="Woodbox133" parent="Environment" index="95" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1248 )
+
+[node name="Woodbox139" parent="Environment" index="96" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1440 )
+
+[node name="Woodbox146" parent="Environment" index="97" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1248 )
+
+[node name="Woodbox156" parent="Environment" index="98" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1440 )
+
+[node name="Woodbox160" parent="Environment" index="99" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1248 )
+
+[node name="Woodbox168" parent="Environment" index="100" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1440 )
+
+[node name="Woodbox12" parent="Environment" index="101" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 864 )
+
+[node name="Woodbox19" parent="Environment" index="102" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 864 )
+
+[node name="Woodbox33" parent="Environment" index="103" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 864 )
+
+[node name="Woodbox5" parent="Environment" index="104" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 928 )
+
+[node name="Woodbox37" parent="Environment" index="105" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1120 )
+
+[node name="Woodbox44" parent="Environment" index="106" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1120 )
+
+[node name="Woodbox53" parent="Environment" index="107" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1120 )
+
+[node name="Woodbox58" parent="Environment" index="108" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1120 )
+
+[node name="Woodbox65" parent="Environment" index="109" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1120 )
+
+[node name="Woodbox72" parent="Environment" index="110" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1120 )
+
+[node name="Woodbox78" parent="Environment" index="111" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 928 )
+
+[node name="Woodbox84" parent="Environment" index="112" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1120 )
+
+[node name="Woodbox88" parent="Environment" index="113" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1312 )
+
+[node name="Woodbox93" parent="Environment" index="114" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1504 )
+
+[node name="Woodbox172" parent="Environment" index="115" instance=ExtResource( 12 )]
+
+position = Vector2( 416, 1568 )
+
+[node name="Woodbox102" parent="Environment" index="116" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1312 )
+
+[node name="Woodbox104" parent="Environment" index="117" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1504 )
+
+[node name="Woodbox169" parent="Environment" index="118" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 1568 )
+
+[node name="Woodbox111" parent="Environment" index="119" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1312 )
+
+[node name="Woodbox118" parent="Environment" index="120" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1504 )
+
+[node name="Woodbox173" parent="Environment" index="121" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 1568 )
+
+[node name="Woodbox121" parent="Environment" index="122" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1312 )
+
+[node name="Woodbox128" parent="Environment" index="123" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1504 )
+
+[node name="Woodbox174" parent="Environment" index="124" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 1568 )
+
+[node name="Woodbox134" parent="Environment" index="125" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1312 )
+
+[node name="Woodbox140" parent="Environment" index="126" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1504 )
+
+[node name="Woodbox175" parent="Environment" index="127" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 1568 )
+
+[node name="Woodbox147" parent="Environment" index="128" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1312 )
+
+[node name="Woodbox151" parent="Environment" index="129" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1504 )
+
+[node name="Woodbox178" parent="Environment" index="130" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 1568 )
+
+[node name="Woodbox158" parent="Environment" index="131" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1312 )
+
+[node name="Woodbox163" parent="Environment" index="132" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1504 )
+
+[node name="Woodbox182" parent="Environment" index="133" instance=ExtResource( 12 )]
+
+position = Vector2( 1184, 1568 )
+
+[node name="Woodbox10" parent="Environment" index="134" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 928 )
+
+[node name="Woodbox23" parent="Environment" index="135" instance=ExtResource( 12 )]
+
+position = Vector2( 800, 928 )
+
+[node name="Woodbox35" parent="Environment" index="136" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 928 )
+
+[node name="Woodbox6" parent="Environment" index="137" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 928 )
+
+[node name="Woodbox41" parent="Environment" index="138" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1120 )
+
+[node name="Woodbox43" parent="Environment" index="139" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1120 )
+
+[node name="Woodbox54" parent="Environment" index="140" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1120 )
+
+[node name="Woodbox59" parent="Environment" index="141" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1120 )
+
+[node name="Woodbox61" parent="Environment" index="142" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1120 )
+
+[node name="Woodbox69" parent="Environment" index="143" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1120 )
+
+[node name="Woodbox75" parent="Environment" index="144" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 928 )
+
+[node name="Woodbox82" parent="Environment" index="145" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1120 )
+
+[node name="Woodbox87" parent="Environment" index="146" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1312 )
+
+[node name="Woodbox95" parent="Environment" index="147" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1504 )
+
+[node name="Woodbox171" parent="Environment" index="148" instance=ExtResource( 12 )]
+
+position = Vector2( 480, 1568 )
+
+[node name="Woodbox99" parent="Environment" index="149" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1312 )
+
+[node name="Woodbox105" parent="Environment" index="150" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1504 )
+
+[node name="Woodbox170" parent="Environment" index="151" instance=ExtResource( 12 )]
+
+position = Vector2( 608, 1568 )
+
+[node name="Woodbox112" parent="Environment" index="152" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1312 )
+
+[node name="Woodbox119" parent="Environment" index="153" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1504 )
+
+[node name="Woodbox179" parent="Environment" index="154" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 1568 )
+
+[node name="Woodbox125" parent="Environment" index="155" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1312 )
+
+[node name="Woodbox127" parent="Environment" index="156" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1504 )
+
+[node name="Woodbox176" parent="Environment" index="157" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 1568 )
+
+[node name="Woodbox137" parent="Environment" index="158" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1312 )
+
+[node name="Woodbox143" parent="Environment" index="159" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1504 )
+
+[node name="Woodbox177" parent="Environment" index="160" instance=ExtResource( 12 )]
+
+position = Vector2( 992, 1568 )
+
+[node name="Woodbox150" parent="Environment" index="161" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1312 )
+
+[node name="Woodbox155" parent="Environment" index="162" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1504 )
+
+[node name="Woodbox180" parent="Environment" index="163" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 1568 )
+
+[node name="Woodbox159" parent="Environment" index="164" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1312 )
+
+[node name="Woodbox166" parent="Environment" index="165" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1504 )
+
+[node name="Woodbox181" parent="Environment" index="166" instance=ExtResource( 12 )]
+
+position = Vector2( 1248, 1568 )
+
+[node name="Woodbox15" parent="Environment" index="167" instance=ExtResource( 12 )]
+
+position = Vector2( 672, 928 )
+
+[node name="Woodbox21" parent="Environment" index="168" instance=ExtResource( 12 )]
+
+position = Vector2( 864, 928 )
+
+[node name="Woodbox29" parent="Environment" index="169" instance=ExtResource( 12 )]
+
+position = Vector2( 1056, 928 )
+
+[node name="Woodbox7" parent="Environment" index="170" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 800 )
+
+[node name="Woodbox16" parent="Environment" index="171" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 800 )
+
+[node name="Woodbox22" parent="Environment" index="172" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 800 )
+
+[node name="Woodbox31" parent="Environment" index="173" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 800 )
+
+[node name="Woodbox8" parent="Environment" index="174" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 864 )
+
+[node name="Woodbox18" parent="Environment" index="175" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 864 )
+
+[node name="Woodbox24" parent="Environment" index="176" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 864 )
+
+[node name="Woodbox36" parent="Environment" index="177" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 864 )
+
+[node name="Woodbox9" parent="Environment" index="178" instance=ExtResource( 12 )]
+
+position = Vector2( 544, 928 )
+
+[node name="Woodbox11" parent="Environment" index="179" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 928 )
+
+[node name="Woodbox26" parent="Environment" index="180" instance=ExtResource( 12 )]
+
+position = Vector2( 928, 928 )
+
+[node name="Woodbox32" parent="Environment" index="181" instance=ExtResource( 12 )]
+
+position = Vector2( 1120, 928 )
+
+
