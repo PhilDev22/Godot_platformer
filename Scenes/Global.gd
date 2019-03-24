@@ -1,8 +1,8 @@
 extends Node
 
 var current_scene = null
-var current_level = 6
-var current_sword_id = 1
+var current_level = 0
+var current_sword_id = -1
 var coins = 0
 
 func _ready():

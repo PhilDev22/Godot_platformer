@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Sword.gd" type="Script" id=1]
-[ext_resource path="res://Assets/swords/sword_bronze1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/swords/swoosh_part1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/swords/swoosh_part2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/items/swords/weapon1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/sword/swoosh_part1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sword/swoosh_part2.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 
@@ -157,7 +157,7 @@ tracks/2/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 26.8954, 44.5148 )
 
-[node name="Sword" type="Node2D"]
+[node name="Sword" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -165,7 +165,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 5.34058e-005, -4.76837e-006 )
-rotation = -1.23287
+rotation = 3.33286
 texture = ExtResource( 2 )
 offset = Vector2( -0.306717, -38.476 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]

@@ -1,19 +1,12 @@
 extends Node2D
 
-#sword folder
-var swords_path_root = "res://Assets/swords/"
 #sword files
-var sword_paths = [
-	"sword_bronze1.png", 
-	"sword_bronze2.png", 
-	"sword_silver1.png", 
-	"sword_silver2.png", 
-	"sword_gold1.png", 
-	"sword_gold2.png", 
-	"sword_gold_long1.png",
-	"sword_diamond_long1.png"
-]
-var sword_cooldowns = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.7, 0.7]
+var sword_count = 12
+var sword_count_short = 8
+var swords_path = "res://Assets/items/swords/"
+var sword_prefix = "weapon"
+
+var sword_cooldowns = [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.7, 0.7, 0.7, 0.7]
 
 #attributes of short swords
 var sword_short_offset_y = -38
@@ -33,19 +26,19 @@ func change_type(id):
 	print("changing sword type")
 	if id == -1:
 		visible = false
-	elif id < sword_paths.size():
+	elif id < sword_count:
 		visible = true
 		#set new player attributes
 		get_parent().set_attack_cooldown(sword_cooldowns[id])
 		#switch texture
-		$Sprite.texture = load(swords_path_root + sword_paths[id])
+		$Sprite.texture = load(swords_path + sword_prefix + str( id + 1 ) + ".png")
 		#set position of sprite and of colliding area
-		if id <= 5: #short sword
+		if id <= sword_count_short: #short sword
 			$Sprite.offset.y = sword_short_offset_y
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.x = Vector2(sword_short_collider_pos.x, 0)
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.y = Vector2(0, sword_short_collider_pos.y)
 			$Sprite/Area2D_Sword/CollisionShape2D.scale = sword_short_collider_scale
-		elif id > 5: #long sword
+		elif id > sword_count_short: #long sword
 			$Sprite.offset.y = sword_long_offset_y
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.x = Vector2(sword_long_collider_pos.x, 0)
 			$Sprite/Area2D_Sword/CollisionShape2D.transform.y = Vector2(0, sword_long_collider_pos.y)

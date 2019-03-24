@@ -21,7 +21,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -69,8 +69,6 @@ tile_data = PoolIntArray( -851951, 4, 0, -851950, 4, 0, -851949, 4, 0, -851948, 
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Z Index" ]
 
 [node name="Lights" type="Node2D" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="Light2D2" parent="Lights" index="0" instance=ExtResource( 3 )]
 
@@ -799,9 +797,13 @@ position = Vector2( 2592, 96 )
 [node name="Key" parent="." index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 3168, -528 )
+scale = Vector2( 0.655632, 0.655632 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Treasure" parent="." index="13" instance=ExtResource( 15 )]
 
-position = Vector2( 2272, 144 )
+position = Vector2( 2272, 160 )
+scale = Vector2( 0.655632, 0.655632 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 

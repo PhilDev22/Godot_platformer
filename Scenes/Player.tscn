@@ -5,10 +5,10 @@
 [ext_resource path="res://Assets/knight_animation/idle1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/knight_animation/idle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/knight_animation/idle3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/knight_animation/jump0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/knight_animation/dead0.png" type="Texture" id=6]
 [ext_resource path="res://Assets/knight_animation/run0.png" type="Texture" id=7]
 [ext_resource path="res://Assets/knight_animation/run1.png" type="Texture" id=8]
-[ext_resource path="res://Assets/knight_animation/dead0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/knight_animation/jump0.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Sword.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/heart.png" type="Texture" id=11]
 [ext_resource path="res://Assets/particles/particle_yellow_star.png" type="Texture" id=12]
@@ -28,12 +28,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": false,
-"name": "jump",
+"name": "dead",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
@@ -43,7 +38,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": false,
-"name": "dead",
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "jump",
 "speed": 0.0
 } ]
 
@@ -223,7 +223,7 @@ _sections_unfolded = [ "Transform" ]
 
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

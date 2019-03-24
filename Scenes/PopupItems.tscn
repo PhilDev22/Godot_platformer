@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/PopupItems.gd" type="Script" id=1]
 [ext_resource path="res://Assets/item_popup.png" type="Texture" id=2]
-[ext_resource path="res://Assets/item_cards/card_sword1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/item_cards/card_sword3.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -17,13 +15,11 @@ texture = ExtResource( 2 )
 [node name="Card0" type="Sprite" parent="." index="1"]
 
 position = Vector2( -102.429, -23.2687 )
-texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Card1" type="Sprite" parent="." index="2"]
 
 position = Vector2( 95.2909, -23.1607 )
-texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 

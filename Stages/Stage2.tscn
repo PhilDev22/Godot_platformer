@@ -326,8 +326,6 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Items" type="Node2D" parent="." index="11"]
 
-editor/display_folded = true
-
 [node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( -30.5641, -97.6804 )
@@ -336,15 +334,15 @@ position = Vector2( -30.5641, -97.6804 )
 
 [node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 11 )]
 
-position = Vector2( 517.641, 544.077 )
+position = Vector2( 510, 500 )
 
 [node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 11 )]
 
-position = Vector2( 826.446, 546.798 )
+position = Vector2( 830, 500 )
 
 [node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 11 )]
 
-position = Vector2( 1082.2, 548.158 )
+position = Vector2( 1080, 500 )
 
 [node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 11 )]
 

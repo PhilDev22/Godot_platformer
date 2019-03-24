@@ -143,6 +143,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 position = Vector2( 189.817, 203.609 )
 scale = Vector2( 0.655632, 0.655632 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="6"]
 

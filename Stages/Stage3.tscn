@@ -224,6 +224,7 @@ shape = SubResource( 1 )
 
 [node name="Obstacles" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 1088, 640 )
 
 [node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 8 )]
@@ -546,6 +547,18 @@ position = Vector2( 4010, 390 )
 [node name="Coin29" parent="Items/Coins" index="28" instance=ExtResource( 13 )]
 
 position = Vector2( 4040, 390 )
+
+[node name="Coin30" parent="Items/Coins" index="29" instance=ExtResource( 13 )]
+
+position = Vector2( 2459.99, 553.465 )
+
+[node name="Coin31" parent="Items/Coins" index="30" instance=ExtResource( 13 )]
+
+position = Vector2( 2458.63, 606.52 )
+
+[node name="Coin32" parent="Items/Coins" index="31" instance=ExtResource( 13 )]
+
+position = Vector2( 2401.49, 613.321 )
 
 [node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 14 )]
 
