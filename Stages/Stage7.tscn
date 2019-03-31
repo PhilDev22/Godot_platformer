@@ -70,6 +70,8 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder", "Z Index" ]
 
 [node name="Lights" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Light2D2" parent="Lights" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 100, 610 )

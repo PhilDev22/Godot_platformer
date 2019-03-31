@@ -12,12 +12,23 @@ func _ready():
 
 func load_next_level():
 	var path_new_stage = "res://Stages/Stage" + str(current_level + 1) +".tscn"
+	var path_outro = "res://Stages/Outro.tscn"
 	var file2Check = File.new()
 	if file2Check.file_exists(path_new_stage):
 		current_level += 1
 		goto_scene(path_new_stage)
+		#var coins_count = get_tree().get_root().find_node("Coins", true, false).get_child_count()
+		#print(coins_count)
 	else:
 		print("Could not find scene: " + path_new_stage)
+		goto_scene(path_outro)
+		
+	
+func reset():
+	current_level = -1
+	coins = 0
+	current_sword_id = -1
+	load_next_level()
 	
 func set_sword_id(id):
 	current_sword_id = id

@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/dynamic_font_gabriola.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/title.png" type="Texture" id=4]
 
-[node name="GUICanvasLayer" type="CanvasLayer" index="0"]
+[node name="GUICanvasLayer" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
