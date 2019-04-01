@@ -23,13 +23,15 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 11.9854
 
-[node name="Coin" type="Node2D"]
+[node name="Coin" type="Node2D" index="0" groups=[
+"Coins",
+]]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 7
+frame = 3
 playing = true
 
 [node name="Area2D_Coin" type="Area2D" parent="." index="1"]
