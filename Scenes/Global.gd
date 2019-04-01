@@ -1,24 +1,28 @@
 extends Node
 
+var MAX_LEVEL = 7
+
 var current_scene = null
-var current_level = -1
-var current_sword_id = -1
+var current_level = 0 # 0 = menu
+var current_sword_id = -1 # -1 = no sword
 var coins = 0
+var coins_total = 0
 
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
-	load_next_level()
+	#if the starting level is not level 0, then load it
+	if current_level > 0:
+		current_level -= 1
+		load_next_level()
 
 func load_next_level():
 	var path_new_stage = "res://Stages/Stage" + str(current_level + 1) +".tscn"
 	var path_outro = "res://Stages/Outro.tscn"
 	var file2Check = File.new()
-	if file2Check.file_exists(path_new_stage):
+	if file2Check.file_exists(path_new_stage) and current_level + 1 <= MAX_LEVEL:
 		current_level += 1
 		goto_scene(path_new_stage)
-		#var coins_count = get_tree().get_root().find_node("Coins", true, false).get_child_count()
-		#print(coins_count)
 	else:
 		print("Could not find scene: " + path_new_stage)
 		goto_scene(path_outro)
@@ -27,6 +31,7 @@ func load_next_level():
 func reset():
 	current_level = -1
 	coins = 0
+	coins_total = 0
 	current_sword_id = -1
 	load_next_level()
 	

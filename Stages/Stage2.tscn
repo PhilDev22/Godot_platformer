@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
@@ -10,9 +10,10 @@
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Stages/Coins.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -67,6 +68,8 @@ tile_data = PoolIntArray( -262146, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 
 _sections_unfolded = [ "Cell", "Collision", "Occluder", "Z Index" ]
 
 [node name="Lights" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="Light00" parent="Lights" index="0" instance=ExtResource( 3 )]
 
@@ -202,6 +205,7 @@ shape = SubResource( 1 )
 
 [node name="Obstacles" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 1088, 640 )
 
 [node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 7 )]
@@ -332,130 +336,133 @@ position = Vector2( -30.5641, -97.6804 )
 
 [node name="Coins" type="Node2D" parent="Items" index="1"]
 
-[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 11 )]
+editor/display_folded = true
+script = ExtResource( 11 )
+
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 510, 500 )
 
-[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 11 )]
+[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 830, 500 )
 
-[node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 11 )]
+[node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 1080, 500 )
 
-[node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 11 )]
+[node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( 1490, 560 )
 
-[node name="Coin5" parent="Items/Coins" index="4" instance=ExtResource( 11 )]
+[node name="Coin5" parent="Items/Coins" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 1490, 590 )
 
-[node name="Coin6" parent="Items/Coins" index="5" instance=ExtResource( 11 )]
+[node name="Coin6" parent="Items/Coins" index="5" instance=ExtResource( 12 )]
 
 position = Vector2( 1130, 150 )
 
-[node name="Coin7" parent="Items/Coins" index="6" instance=ExtResource( 11 )]
+[node name="Coin7" parent="Items/Coins" index="6" instance=ExtResource( 12 )]
 
 position = Vector2( 1100, 150 )
 
-[node name="Coin8" parent="Items/Coins" index="7" instance=ExtResource( 11 )]
+[node name="Coin8" parent="Items/Coins" index="7" instance=ExtResource( 12 )]
 
 position = Vector2( 860, 150 )
 
-[node name="Coin9" parent="Items/Coins" index="8" instance=ExtResource( 11 )]
+[node name="Coin9" parent="Items/Coins" index="8" instance=ExtResource( 12 )]
 
 position = Vector2( 830, 150 )
 
-[node name="Coin10" parent="Items/Coins" index="9" instance=ExtResource( 11 )]
+[node name="Coin10" parent="Items/Coins" index="9" instance=ExtResource( 12 )]
 
 position = Vector2( 400, -70 )
 
-[node name="Coin11" parent="Items/Coins" index="10" instance=ExtResource( 11 )]
+[node name="Coin11" parent="Items/Coins" index="10" instance=ExtResource( 12 )]
 
 position = Vector2( 500, -70 )
 
-[node name="Coin12" parent="Items/Coins" index="11" instance=ExtResource( 11 )]
+[node name="Coin12" parent="Items/Coins" index="11" instance=ExtResource( 12 )]
 
 position = Vector2( 610, -70 )
 
-[node name="Coin13" parent="Items/Coins" index="12" instance=ExtResource( 11 )]
+[node name="Coin13" parent="Items/Coins" index="12" instance=ExtResource( 12 )]
 
 position = Vector2( 1350, -60 )
 
-[node name="Coin14" parent="Items/Coins" index="13" instance=ExtResource( 11 )]
+[node name="Coin14" parent="Items/Coins" index="13" instance=ExtResource( 12 )]
 
 position = Vector2( 1440, -60 )
 
-[node name="Coin15" parent="Items/Coins" index="14" instance=ExtResource( 11 )]
+[node name="Coin15" parent="Items/Coins" index="14" instance=ExtResource( 12 )]
 
 position = Vector2( 70, 10 )
 
-[node name="Coin16" parent="Items/Coins" index="15" instance=ExtResource( 11 )]
+[node name="Coin16" parent="Items/Coins" index="15" instance=ExtResource( 12 )]
 
 position = Vector2( 70, 60 )
 
-[node name="Coin17" parent="Items/Coins" index="16" instance=ExtResource( 11 )]
+[node name="Coin17" parent="Items/Coins" index="16" instance=ExtResource( 12 )]
 
 position = Vector2( 70, 110 )
 
-[node name="Coin18" parent="Items/Coins" index="17" instance=ExtResource( 11 )]
+[node name="Coin18" parent="Items/Coins" index="17" instance=ExtResource( 12 )]
 
 position = Vector2( 70, 160 )
 
-[node name="Coin19" parent="Items/Coins" index="18" instance=ExtResource( 11 )]
+[node name="Coin19" parent="Items/Coins" index="18" instance=ExtResource( 12 )]
 
 position = Vector2( 1890, 610 )
 
-[node name="Coin20" parent="Items/Coins" index="19" instance=ExtResource( 11 )]
+[node name="Coin20" parent="Items/Coins" index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 1890, 570 )
 
-[node name="Coin21" parent="Items/Coins" index="20" instance=ExtResource( 11 )]
+[node name="Coin21" parent="Items/Coins" index="20" instance=ExtResource( 12 )]
 
 position = Vector2( 1940, 570 )
 
-[node name="Coin22" parent="Items/Coins" index="21" instance=ExtResource( 11 )]
+[node name="Coin22" parent="Items/Coins" index="21" instance=ExtResource( 12 )]
 
 position = Vector2( 1940, 610 )
 
-[node name="Coin23" parent="Items/Coins" index="22" instance=ExtResource( 11 )]
+[node name="Coin23" parent="Items/Coins" index="22" instance=ExtResource( 12 )]
 
 position = Vector2( 2160, 230 )
 
-[node name="Coin24" parent="Items/Coins" index="23" instance=ExtResource( 11 )]
+[node name="Coin24" parent="Items/Coins" index="23" instance=ExtResource( 12 )]
 
 position = Vector2( 2120, 230 )
 
-[node name="Coin25" parent="Items/Coins" index="24" instance=ExtResource( 11 )]
+[node name="Coin25" parent="Items/Coins" index="24" instance=ExtResource( 12 )]
 
 position = Vector2( 2160, 270 )
 
-[node name="Coin26" parent="Items/Coins" index="25" instance=ExtResource( 11 )]
+[node name="Coin26" parent="Items/Coins" index="25" instance=ExtResource( 12 )]
 
 position = Vector2( 2120, 270 )
 
-[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 12 )]
+[node name="GUICanvasLayer" parent="." index="12" instance=ExtResource( 13 )]
 
 [node name="Environment" type="Node2D" parent="." index="13"]
 
 position = Vector2( 362.975, 608.503 )
 
-[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 13 )]
+[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 4.19119, 2.39502 )
 
-[node name="Woodbox2" parent="Environment" index="1" instance=ExtResource( 13 )]
+[node name="Woodbox2" parent="Environment" index="1" instance=ExtResource( 14 )]
 
 position = Vector2( 1203.89, -126.285 )
 
-[node name="Woodbox3" parent="Environment" index="2" instance=ExtResource( 13 )]
+[node name="Woodbox3" parent="Environment" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 1259.64, -652.517 )
 rotation = -0.679448
 
-[node name="Woodbox4" parent="Environment" index="3" instance=ExtResource( 13 )]
+[node name="Woodbox4" parent="Environment" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 1337.93, -637.025 )
 

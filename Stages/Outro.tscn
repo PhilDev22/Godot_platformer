@@ -50,7 +50,7 @@ tracks/2/keys = {
 } ]
 }
 
-[node name="Outro" type="Node2D"]
+[node name="Outro" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -72,7 +72,7 @@ blend_times = [  ]
 
 [node name="CoinsCollected" type="Node2D" parent="." index="1"]
 
-position = Vector2( 585.639, 520.568 )
+position = Vector2( 544, 528 )
 _sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true

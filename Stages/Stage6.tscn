@@ -1,24 +1,25 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/ObstacleSpikes.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/ObstacleSaw.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Stages/Coins.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PotionSmall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/EnemyGhost.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/ObstacleSpikes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/ObstacleSaw.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Woodbox.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="Stage" type="Node2D" index="0"]
+[node name="Stage" type="Node2D"]
 
 [node name="TileMapBackground" type="TileMap" parent="." index="0"]
 
@@ -162,211 +163,211 @@ position = Vector2( 832, 1536 )
 
 [node name="Items" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Coins" type="Node2D" parent="Items" index="0"]
 
-[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 6 )]
+script = ExtResource( 6 )
+
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 632, 882 )
 
-[node name="Coin7" parent="Items/Coins" index="1" instance=ExtResource( 6 )]
+[node name="Coin7" parent="Items/Coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1112, 1058 )
 
-[node name="Coin29" parent="Items/Coins" index="2" instance=ExtResource( 6 )]
+[node name="Coin29" parent="Items/Coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1112, 962 )
 
-[node name="Coin17" parent="Items/Coins" index="3" instance=ExtResource( 6 )]
+[node name="Coin17" parent="Items/Coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 904, 1346 )
 
-[node name="Coin2" parent="Items/Coins" index="4" instance=ExtResource( 6 )]
+[node name="Coin2" parent="Items/Coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 512, 832 )
 
-[node name="Coin11" parent="Items/Coins" index="5" instance=ExtResource( 6 )]
+[node name="Coin11" parent="Items/Coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 992, 1008 )
 
-[node name="Coin27" parent="Items/Coins" index="6" instance=ExtResource( 6 )]
+[node name="Coin27" parent="Items/Coins" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 992, 912 )
 
-[node name="Coin18" parent="Items/Coins" index="7" instance=ExtResource( 6 )]
+[node name="Coin18" parent="Items/Coins" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 784, 1296 )
 
-[node name="Coin34" parent="Items/Coins" index="8" instance=ExtResource( 6 )]
+[node name="Coin34" parent="Items/Coins" index="8" instance=ExtResource( 7 )]
 
 position = Vector2( 592, 1456 )
 
-[node name="Coin3" parent="Items/Coins" index="9" instance=ExtResource( 6 )]
+[node name="Coin3" parent="Items/Coins" index="9" instance=ExtResource( 7 )]
 
 position = Vector2( 572, 832 )
 
-[node name="Coin10" parent="Items/Coins" index="10" instance=ExtResource( 6 )]
+[node name="Coin10" parent="Items/Coins" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 1052, 1008 )
 
-[node name="Coin28" parent="Items/Coins" index="11" instance=ExtResource( 6 )]
+[node name="Coin28" parent="Items/Coins" index="11" instance=ExtResource( 7 )]
 
 position = Vector2( 1052, 912 )
 
-[node name="Coin15" parent="Items/Coins" index="12" instance=ExtResource( 6 )]
+[node name="Coin15" parent="Items/Coins" index="12" instance=ExtResource( 7 )]
 
 position = Vector2( 844, 1296 )
 
-[node name="Coin35" parent="Items/Coins" index="13" instance=ExtResource( 6 )]
+[node name="Coin35" parent="Items/Coins" index="13" instance=ExtResource( 7 )]
 
 position = Vector2( 652, 1456 )
 
-[node name="Coin4" parent="Items/Coins" index="14" instance=ExtResource( 6 )]
+[node name="Coin4" parent="Items/Coins" index="14" instance=ExtResource( 7 )]
 
 position = Vector2( 512, 882 )
 
-[node name="Coin9" parent="Items/Coins" index="15" instance=ExtResource( 6 )]
+[node name="Coin9" parent="Items/Coins" index="15" instance=ExtResource( 7 )]
 
 position = Vector2( 992, 1058 )
 
-[node name="Coin30" parent="Items/Coins" index="16" instance=ExtResource( 6 )]
+[node name="Coin30" parent="Items/Coins" index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 992, 962 )
 
-[node name="Coin13" parent="Items/Coins" index="17" instance=ExtResource( 6 )]
+[node name="Coin13" parent="Items/Coins" index="17" instance=ExtResource( 7 )]
 
 position = Vector2( 784, 1346 )
 
-[node name="Coin33" parent="Items/Coins" index="18" instance=ExtResource( 6 )]
+[node name="Coin33" parent="Items/Coins" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 592, 1506 )
 
-[node name="Coin5" parent="Items/Coins" index="19" instance=ExtResource( 6 )]
+[node name="Coin5" parent="Items/Coins" index="19" instance=ExtResource( 7 )]
 
 position = Vector2( 572, 882 )
 
-[node name="Coin12" parent="Items/Coins" index="20" instance=ExtResource( 6 )]
+[node name="Coin12" parent="Items/Coins" index="20" instance=ExtResource( 7 )]
 
 position = Vector2( 1052, 1058 )
 
-[node name="Coin31" parent="Items/Coins" index="21" instance=ExtResource( 6 )]
+[node name="Coin31" parent="Items/Coins" index="21" instance=ExtResource( 7 )]
 
 position = Vector2( 1052, 962 )
 
-[node name="Coin16" parent="Items/Coins" index="22" instance=ExtResource( 6 )]
+[node name="Coin16" parent="Items/Coins" index="22" instance=ExtResource( 7 )]
 
 position = Vector2( 844, 1346 )
 
-[node name="Coin39" parent="Items/Coins" index="23" instance=ExtResource( 6 )]
+[node name="Coin39" parent="Items/Coins" index="23" instance=ExtResource( 7 )]
 
 position = Vector2( 652, 1506 )
 
-[node name="Coin6" parent="Items/Coins" index="24" instance=ExtResource( 6 )]
+[node name="Coin6" parent="Items/Coins" index="24" instance=ExtResource( 7 )]
 
 position = Vector2( 632, 832 )
 
-[node name="Coin8" parent="Items/Coins" index="25" instance=ExtResource( 6 )]
+[node name="Coin8" parent="Items/Coins" index="25" instance=ExtResource( 7 )]
 
 position = Vector2( 1112, 1008 )
 
-[node name="Coin32" parent="Items/Coins" index="26" instance=ExtResource( 6 )]
+[node name="Coin32" parent="Items/Coins" index="26" instance=ExtResource( 7 )]
 
 position = Vector2( 1112, 912 )
 
-[node name="Coin14" parent="Items/Coins" index="27" instance=ExtResource( 6 )]
+[node name="Coin14" parent="Items/Coins" index="27" instance=ExtResource( 7 )]
 
 position = Vector2( 904, 1296 )
 
-[node name="Coin19" parent="Items/Coins" index="28" instance=ExtResource( 6 )]
+[node name="Coin19" parent="Items/Coins" index="28" instance=ExtResource( 7 )]
 
 position = Vector2( 960, 1296 )
 
-[node name="Coin20" parent="Items/Coins" index="29" instance=ExtResource( 6 )]
+[node name="Coin20" parent="Items/Coins" index="29" instance=ExtResource( 7 )]
 
 position = Vector2( 960, 1344 )
 
-[node name="Coin21" parent="Items/Coins" index="30" instance=ExtResource( 6 )]
+[node name="Coin21" parent="Items/Coins" index="30" instance=ExtResource( 7 )]
 
 position = Vector2( 736, 1296 )
 
-[node name="Coin36" parent="Items/Coins" index="31" instance=ExtResource( 6 )]
+[node name="Coin36" parent="Items/Coins" index="31" instance=ExtResource( 7 )]
 
 position = Vector2( 544, 1456 )
 
-[node name="Coin25" parent="Items/Coins" index="32" instance=ExtResource( 6 )]
+[node name="Coin25" parent="Items/Coins" index="32" instance=ExtResource( 7 )]
 
 position = Vector2( 688, 1296 )
 
-[node name="Coin37" parent="Items/Coins" index="33" instance=ExtResource( 6 )]
+[node name="Coin37" parent="Items/Coins" index="33" instance=ExtResource( 7 )]
 
 position = Vector2( 496, 1456 )
 
-[node name="Coin26" parent="Items/Coins" index="34" instance=ExtResource( 6 )]
+[node name="Coin26" parent="Items/Coins" index="34" instance=ExtResource( 7 )]
 
 position = Vector2( 688, 1344 )
 
-[node name="Coin38" parent="Items/Coins" index="35" instance=ExtResource( 6 )]
+[node name="Coin38" parent="Items/Coins" index="35" instance=ExtResource( 7 )]
 
 position = Vector2( 496, 1504 )
 
-[node name="Coin22" parent="Items/Coins" index="36" instance=ExtResource( 6 )]
+[node name="Coin22" parent="Items/Coins" index="36" instance=ExtResource( 7 )]
 
 position = Vector2( 736, 1344 )
 
-[node name="Coin40" parent="Items/Coins" index="37" instance=ExtResource( 6 )]
+[node name="Coin40" parent="Items/Coins" index="37" instance=ExtResource( 7 )]
 
 position = Vector2( 544, 1504 )
 
-[node name="Coin23" parent="Items/Coins" index="38" instance=ExtResource( 6 )]
+[node name="Coin23" parent="Items/Coins" index="38" instance=ExtResource( 7 )]
 
 position = Vector2( 1008, 1296 )
 
-[node name="Coin24" parent="Items/Coins" index="39" instance=ExtResource( 6 )]
+[node name="Coin24" parent="Items/Coins" index="39" instance=ExtResource( 7 )]
 
 position = Vector2( 1008, 1344 )
 
-[node name="PotionSmall2" parent="Items" index="1" instance=ExtResource( 7 )]
+[node name="PotionSmall2" parent="Items" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 432, 928 )
 
-[node name="PotionSmall3" parent="Items" index="2" instance=ExtResource( 7 )]
+[node name="PotionSmall3" parent="Items" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( 416, 1488 )
 
-[node name="PotionSmall" parent="Items/PotionSmall3" index="1" instance=ExtResource( 7 )]
+[node name="PotionSmall" parent="Items/PotionSmall3" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 544, -288 )
 
-[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 8 )]
+[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 9 )]
 
 [node name="Enemies" type="Node2D" parent="." index="9"]
 
 editor/display_folded = true
 
-[node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 9 )]
+[node name="EnemyGhost" parent="Enemies" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 592, 928 )
 
-[node name="EnemyGhost5" parent="Enemies" index="1" instance=ExtResource( 9 )]
+[node name="EnemyGhost5" parent="Enemies" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( 640, 640 )
 
-[node name="EnemyGhost6" parent="Enemies" index="2" instance=ExtResource( 9 )]
+[node name="EnemyGhost6" parent="Enemies" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 904.225, 644.081 )
 scale = Vector2( -1, 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="EnemyGhost2" parent="Enemies" index="3" instance=ExtResource( 9 )]
+[node name="EnemyGhost2" parent="Enemies" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 912, 1008 )
 
-[node name="EnemyGhost3" parent="Enemies" index="4" instance=ExtResource( 9 )]
+[node name="EnemyGhost3" parent="Enemies" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 592, 1248 )
 
-[node name="EnemyGhost4" parent="Enemies" index="5" instance=ExtResource( 9 )]
+[node name="EnemyGhost4" parent="Enemies" index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 1120, 1376 )
 
@@ -374,71 +375,71 @@ position = Vector2( 1120, 1376 )
 
 editor/display_folded = true
 
-[node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 10 )]
+[node name="Obstacle00" parent="Obstacles" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 384, 1600 )
 
-[node name="Obstacle09" parent="Obstacles" index="1" instance=ExtResource( 10 )]
+[node name="Obstacle09" parent="Obstacles" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 960, 1600 )
 
-[node name="Obstacle12" parent="Obstacles" index="2" instance=ExtResource( 10 )]
+[node name="Obstacle12" parent="Obstacles" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 896, 1600 )
 
-[node name="Obstacle03" parent="Obstacles" index="3" instance=ExtResource( 10 )]
+[node name="Obstacle03" parent="Obstacles" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 512, 1600 )
 
-[node name="Obstacle08" parent="Obstacles" index="4" instance=ExtResource( 10 )]
+[node name="Obstacle08" parent="Obstacles" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 1088, 1600 )
 
-[node name="Obstacle05" parent="Obstacles" index="5" instance=ExtResource( 10 )]
+[node name="Obstacle05" parent="Obstacles" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 640, 1600 )
 
-[node name="Obstacle11" parent="Obstacles" index="6" instance=ExtResource( 10 )]
+[node name="Obstacle11" parent="Obstacles" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 1216, 1600 )
 
-[node name="Obstacle01" parent="Obstacles" index="7" instance=ExtResource( 10 )]
+[node name="Obstacle01" parent="Obstacles" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 448, 1600 )
 
-[node name="Obstacle07" parent="Obstacles" index="8" instance=ExtResource( 10 )]
+[node name="Obstacle07" parent="Obstacles" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 1024, 1600 )
 
-[node name="Obstacle02" parent="Obstacles" index="9" instance=ExtResource( 10 )]
+[node name="Obstacle02" parent="Obstacles" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 576, 1600 )
 
-[node name="Obstacle06" parent="Obstacles" index="10" instance=ExtResource( 10 )]
+[node name="Obstacle06" parent="Obstacles" index="10" instance=ExtResource( 11 )]
 
 position = Vector2( 1152, 1600 )
 
-[node name="Obstacle04" parent="Obstacles" index="11" instance=ExtResource( 10 )]
+[node name="Obstacle04" parent="Obstacles" index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 704, 1600 )
 
-[node name="Obstacle10" parent="Obstacles" index="12" instance=ExtResource( 10 )]
+[node name="Obstacle10" parent="Obstacles" index="12" instance=ExtResource( 11 )]
 
 position = Vector2( 1280, 1600 )
 
-[node name="ObstacleSaw" parent="Obstacles" index="13" instance=ExtResource( 11 )]
+[node name="ObstacleSaw" parent="Obstacles" index="13" instance=ExtResource( 12 )]
 
 position = Vector2( 1216, 1040 )
 
-[node name="ObstacleSaw2" parent="Obstacles" index="14" instance=ExtResource( 11 )]
+[node name="ObstacleSaw2" parent="Obstacles" index="14" instance=ExtResource( 12 )]
 
 position = Vector2( 480, 1072 )
 
-[node name="ObstacleSaw3" parent="Obstacles" index="15" instance=ExtResource( 11 )]
+[node name="ObstacleSaw3" parent="Obstacles" index="15" instance=ExtResource( 12 )]
 
 position = Vector2( 832, 1168 )
 
-[node name="ObstacleSaw4" parent="Obstacles" index="16" instance=ExtResource( 11 )]
+[node name="ObstacleSaw4" parent="Obstacles" index="16" instance=ExtResource( 12 )]
 
 position = Vector2( 1056, 816 )
 
@@ -448,731 +449,731 @@ editor/display_folded = true
 z_index = 2
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 12 )]
+[node name="Woodbox" parent="Environment" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 800 )
 
-[node name="Woodbox39" parent="Environment" index="1" instance=ExtResource( 12 )]
+[node name="Woodbox39" parent="Environment" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 992 )
 
-[node name="Woodbox47" parent="Environment" index="2" instance=ExtResource( 12 )]
+[node name="Woodbox47" parent="Environment" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 992 )
 
-[node name="Woodbox49" parent="Environment" index="3" instance=ExtResource( 12 )]
+[node name="Woodbox49" parent="Environment" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 992 )
 
-[node name="Woodbox55" parent="Environment" index="4" instance=ExtResource( 12 )]
+[node name="Woodbox55" parent="Environment" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 992 )
 
-[node name="Woodbox63" parent="Environment" index="5" instance=ExtResource( 12 )]
+[node name="Woodbox63" parent="Environment" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 992 )
 
-[node name="Woodbox71" parent="Environment" index="6" instance=ExtResource( 12 )]
+[node name="Woodbox71" parent="Environment" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 992 )
 
-[node name="Woodbox77" parent="Environment" index="7" instance=ExtResource( 12 )]
+[node name="Woodbox77" parent="Environment" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 800 )
 
-[node name="Woodbox80" parent="Environment" index="8" instance=ExtResource( 12 )]
+[node name="Woodbox80" parent="Environment" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 992 )
 
-[node name="Woodbox86" parent="Environment" index="9" instance=ExtResource( 12 )]
+[node name="Woodbox86" parent="Environment" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1184 )
 
-[node name="Woodbox92" parent="Environment" index="10" instance=ExtResource( 12 )]
+[node name="Woodbox92" parent="Environment" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1376 )
 
-[node name="Woodbox97" parent="Environment" index="11" instance=ExtResource( 12 )]
+[node name="Woodbox97" parent="Environment" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1184 )
 
-[node name="Woodbox107" parent="Environment" index="12" instance=ExtResource( 12 )]
+[node name="Woodbox107" parent="Environment" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1376 )
 
-[node name="Woodbox110" parent="Environment" index="13" instance=ExtResource( 12 )]
+[node name="Woodbox110" parent="Environment" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1184 )
 
-[node name="Woodbox116" parent="Environment" index="14" instance=ExtResource( 12 )]
+[node name="Woodbox116" parent="Environment" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1376 )
 
-[node name="Woodbox124" parent="Environment" index="15" instance=ExtResource( 12 )]
+[node name="Woodbox124" parent="Environment" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1184 )
 
-[node name="Woodbox131" parent="Environment" index="16" instance=ExtResource( 12 )]
+[node name="Woodbox131" parent="Environment" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1376 )
 
-[node name="Woodbox135" parent="Environment" index="17" instance=ExtResource( 12 )]
+[node name="Woodbox135" parent="Environment" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1184 )
 
-[node name="Woodbox142" parent="Environment" index="18" instance=ExtResource( 12 )]
+[node name="Woodbox142" parent="Environment" index="18" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1376 )
 
-[node name="Woodbox149" parent="Environment" index="19" instance=ExtResource( 12 )]
+[node name="Woodbox149" parent="Environment" index="19" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1184 )
 
-[node name="Woodbox153" parent="Environment" index="20" instance=ExtResource( 12 )]
+[node name="Woodbox153" parent="Environment" index="20" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1376 )
 
-[node name="Woodbox162" parent="Environment" index="21" instance=ExtResource( 12 )]
+[node name="Woodbox162" parent="Environment" index="21" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1184 )
 
-[node name="Woodbox164" parent="Environment" index="22" instance=ExtResource( 12 )]
+[node name="Woodbox164" parent="Environment" index="22" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1376 )
 
-[node name="Woodbox13" parent="Environment" index="23" instance=ExtResource( 12 )]
+[node name="Woodbox13" parent="Environment" index="23" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 800 )
 
-[node name="Woodbox25" parent="Environment" index="24" instance=ExtResource( 12 )]
+[node name="Woodbox25" parent="Environment" index="24" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 800 )
 
-[node name="Woodbox30" parent="Environment" index="25" instance=ExtResource( 12 )]
+[node name="Woodbox30" parent="Environment" index="25" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 800 )
 
-[node name="Woodbox2" parent="Environment" index="26" instance=ExtResource( 12 )]
+[node name="Woodbox2" parent="Environment" index="26" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 864 )
 
-[node name="Woodbox42" parent="Environment" index="27" instance=ExtResource( 12 )]
+[node name="Woodbox42" parent="Environment" index="27" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1056 )
 
-[node name="Woodbox45" parent="Environment" index="28" instance=ExtResource( 12 )]
+[node name="Woodbox45" parent="Environment" index="28" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1056 )
 
-[node name="Woodbox51" parent="Environment" index="29" instance=ExtResource( 12 )]
+[node name="Woodbox51" parent="Environment" index="29" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1056 )
 
-[node name="Woodbox60" parent="Environment" index="30" instance=ExtResource( 12 )]
+[node name="Woodbox60" parent="Environment" index="30" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1056 )
 
-[node name="Woodbox62" parent="Environment" index="31" instance=ExtResource( 12 )]
+[node name="Woodbox62" parent="Environment" index="31" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1056 )
 
-[node name="Woodbox68" parent="Environment" index="32" instance=ExtResource( 12 )]
+[node name="Woodbox68" parent="Environment" index="32" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1056 )
 
-[node name="Woodbox74" parent="Environment" index="33" instance=ExtResource( 12 )]
+[node name="Woodbox74" parent="Environment" index="33" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 864 )
 
-[node name="Woodbox79" parent="Environment" index="34" instance=ExtResource( 12 )]
+[node name="Woodbox79" parent="Environment" index="34" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1056 )
 
-[node name="Woodbox85" parent="Environment" index="35" instance=ExtResource( 12 )]
+[node name="Woodbox85" parent="Environment" index="35" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1248 )
 
-[node name="Woodbox91" parent="Environment" index="36" instance=ExtResource( 12 )]
+[node name="Woodbox91" parent="Environment" index="36" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1440 )
 
-[node name="Woodbox101" parent="Environment" index="37" instance=ExtResource( 12 )]
+[node name="Woodbox101" parent="Environment" index="37" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1248 )
 
-[node name="Woodbox108" parent="Environment" index="38" instance=ExtResource( 12 )]
+[node name="Woodbox108" parent="Environment" index="38" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1440 )
 
-[node name="Woodbox109" parent="Environment" index="39" instance=ExtResource( 12 )]
+[node name="Woodbox109" parent="Environment" index="39" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1248 )
 
-[node name="Woodbox115" parent="Environment" index="40" instance=ExtResource( 12 )]
+[node name="Woodbox115" parent="Environment" index="40" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1440 )
 
-[node name="Woodbox122" parent="Environment" index="41" instance=ExtResource( 12 )]
+[node name="Woodbox122" parent="Environment" index="41" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1248 )
 
-[node name="Woodbox129" parent="Environment" index="42" instance=ExtResource( 12 )]
+[node name="Woodbox129" parent="Environment" index="42" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1440 )
 
-[node name="Woodbox136" parent="Environment" index="43" instance=ExtResource( 12 )]
+[node name="Woodbox136" parent="Environment" index="43" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1248 )
 
-[node name="Woodbox141" parent="Environment" index="44" instance=ExtResource( 12 )]
+[node name="Woodbox141" parent="Environment" index="44" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1440 )
 
-[node name="Woodbox145" parent="Environment" index="45" instance=ExtResource( 12 )]
+[node name="Woodbox145" parent="Environment" index="45" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1248 )
 
-[node name="Woodbox152" parent="Environment" index="46" instance=ExtResource( 12 )]
+[node name="Woodbox152" parent="Environment" index="46" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1440 )
 
-[node name="Woodbox157" parent="Environment" index="47" instance=ExtResource( 12 )]
+[node name="Woodbox157" parent="Environment" index="47" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1248 )
 
-[node name="Woodbox165" parent="Environment" index="48" instance=ExtResource( 12 )]
+[node name="Woodbox165" parent="Environment" index="48" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1440 )
 
-[node name="Woodbox17" parent="Environment" index="49" instance=ExtResource( 12 )]
+[node name="Woodbox17" parent="Environment" index="49" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 864 )
 
-[node name="Woodbox27" parent="Environment" index="50" instance=ExtResource( 12 )]
+[node name="Woodbox27" parent="Environment" index="50" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 864 )
 
-[node name="Woodbox28" parent="Environment" index="51" instance=ExtResource( 12 )]
+[node name="Woodbox28" parent="Environment" index="51" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 864 )
 
-[node name="Woodbox3" parent="Environment" index="52" instance=ExtResource( 12 )]
+[node name="Woodbox3" parent="Environment" index="52" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 800 )
 
-[node name="Woodbox40" parent="Environment" index="53" instance=ExtResource( 12 )]
+[node name="Woodbox40" parent="Environment" index="53" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 992 )
 
-[node name="Woodbox46" parent="Environment" index="54" instance=ExtResource( 12 )]
+[node name="Woodbox46" parent="Environment" index="54" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 992 )
 
-[node name="Woodbox52" parent="Environment" index="55" instance=ExtResource( 12 )]
+[node name="Woodbox52" parent="Environment" index="55" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 992 )
 
-[node name="Woodbox57" parent="Environment" index="56" instance=ExtResource( 12 )]
+[node name="Woodbox57" parent="Environment" index="56" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 992 )
 
-[node name="Woodbox66" parent="Environment" index="57" instance=ExtResource( 12 )]
+[node name="Woodbox66" parent="Environment" index="57" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 992 )
 
-[node name="Woodbox67" parent="Environment" index="58" instance=ExtResource( 12 )]
+[node name="Woodbox67" parent="Environment" index="58" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 992 )
 
-[node name="Woodbox73" parent="Environment" index="59" instance=ExtResource( 12 )]
+[node name="Woodbox73" parent="Environment" index="59" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 800 )
 
-[node name="Woodbox81" parent="Environment" index="60" instance=ExtResource( 12 )]
+[node name="Woodbox81" parent="Environment" index="60" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 992 )
 
-[node name="Woodbox89" parent="Environment" index="61" instance=ExtResource( 12 )]
+[node name="Woodbox89" parent="Environment" index="61" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1184 )
 
-[node name="Woodbox94" parent="Environment" index="62" instance=ExtResource( 12 )]
+[node name="Woodbox94" parent="Environment" index="62" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1376 )
 
-[node name="Woodbox98" parent="Environment" index="63" instance=ExtResource( 12 )]
+[node name="Woodbox98" parent="Environment" index="63" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1184 )
 
-[node name="Woodbox103" parent="Environment" index="64" instance=ExtResource( 12 )]
+[node name="Woodbox103" parent="Environment" index="64" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1376 )
 
-[node name="Woodbox114" parent="Environment" index="65" instance=ExtResource( 12 )]
+[node name="Woodbox114" parent="Environment" index="65" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1184 )
 
-[node name="Woodbox120" parent="Environment" index="66" instance=ExtResource( 12 )]
+[node name="Woodbox120" parent="Environment" index="66" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1376 )
 
-[node name="Woodbox126" parent="Environment" index="67" instance=ExtResource( 12 )]
+[node name="Woodbox126" parent="Environment" index="67" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1184 )
 
-[node name="Woodbox132" parent="Environment" index="68" instance=ExtResource( 12 )]
+[node name="Woodbox132" parent="Environment" index="68" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1376 )
 
-[node name="Woodbox138" parent="Environment" index="69" instance=ExtResource( 12 )]
+[node name="Woodbox138" parent="Environment" index="69" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1184 )
 
-[node name="Woodbox144" parent="Environment" index="70" instance=ExtResource( 12 )]
+[node name="Woodbox144" parent="Environment" index="70" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1376 )
 
-[node name="Woodbox148" parent="Environment" index="71" instance=ExtResource( 12 )]
+[node name="Woodbox148" parent="Environment" index="71" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1184 )
 
-[node name="Woodbox154" parent="Environment" index="72" instance=ExtResource( 12 )]
+[node name="Woodbox154" parent="Environment" index="72" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1376 )
 
-[node name="Woodbox161" parent="Environment" index="73" instance=ExtResource( 12 )]
+[node name="Woodbox161" parent="Environment" index="73" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1184 )
 
-[node name="Woodbox167" parent="Environment" index="74" instance=ExtResource( 12 )]
+[node name="Woodbox167" parent="Environment" index="74" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1376 )
 
-[node name="Woodbox14" parent="Environment" index="75" instance=ExtResource( 12 )]
+[node name="Woodbox14" parent="Environment" index="75" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 800 )
 
-[node name="Woodbox20" parent="Environment" index="76" instance=ExtResource( 12 )]
+[node name="Woodbox20" parent="Environment" index="76" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 800 )
 
-[node name="Woodbox34" parent="Environment" index="77" instance=ExtResource( 12 )]
+[node name="Woodbox34" parent="Environment" index="77" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 800 )
 
-[node name="Woodbox4" parent="Environment" index="78" instance=ExtResource( 12 )]
+[node name="Woodbox4" parent="Environment" index="78" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 864 )
 
-[node name="Woodbox38" parent="Environment" index="79" instance=ExtResource( 12 )]
+[node name="Woodbox38" parent="Environment" index="79" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1056 )
 
-[node name="Woodbox48" parent="Environment" index="80" instance=ExtResource( 12 )]
+[node name="Woodbox48" parent="Environment" index="80" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1056 )
 
-[node name="Woodbox50" parent="Environment" index="81" instance=ExtResource( 12 )]
+[node name="Woodbox50" parent="Environment" index="81" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1056 )
 
-[node name="Woodbox56" parent="Environment" index="82" instance=ExtResource( 12 )]
+[node name="Woodbox56" parent="Environment" index="82" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1056 )
 
-[node name="Woodbox64" parent="Environment" index="83" instance=ExtResource( 12 )]
+[node name="Woodbox64" parent="Environment" index="83" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1056 )
 
-[node name="Woodbox70" parent="Environment" index="84" instance=ExtResource( 12 )]
+[node name="Woodbox70" parent="Environment" index="84" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1056 )
 
-[node name="Woodbox76" parent="Environment" index="85" instance=ExtResource( 12 )]
+[node name="Woodbox76" parent="Environment" index="85" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 864 )
 
-[node name="Woodbox83" parent="Environment" index="86" instance=ExtResource( 12 )]
+[node name="Woodbox83" parent="Environment" index="86" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1056 )
 
-[node name="Woodbox90" parent="Environment" index="87" instance=ExtResource( 12 )]
+[node name="Woodbox90" parent="Environment" index="87" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1248 )
 
-[node name="Woodbox96" parent="Environment" index="88" instance=ExtResource( 12 )]
+[node name="Woodbox96" parent="Environment" index="88" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1440 )
 
-[node name="Woodbox100" parent="Environment" index="89" instance=ExtResource( 12 )]
+[node name="Woodbox100" parent="Environment" index="89" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1248 )
 
-[node name="Woodbox106" parent="Environment" index="90" instance=ExtResource( 12 )]
+[node name="Woodbox106" parent="Environment" index="90" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1440 )
 
-[node name="Woodbox113" parent="Environment" index="91" instance=ExtResource( 12 )]
+[node name="Woodbox113" parent="Environment" index="91" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1248 )
 
-[node name="Woodbox117" parent="Environment" index="92" instance=ExtResource( 12 )]
+[node name="Woodbox117" parent="Environment" index="92" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1440 )
 
-[node name="Woodbox123" parent="Environment" index="93" instance=ExtResource( 12 )]
+[node name="Woodbox123" parent="Environment" index="93" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1248 )
 
-[node name="Woodbox130" parent="Environment" index="94" instance=ExtResource( 12 )]
+[node name="Woodbox130" parent="Environment" index="94" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1440 )
 
-[node name="Woodbox133" parent="Environment" index="95" instance=ExtResource( 12 )]
+[node name="Woodbox133" parent="Environment" index="95" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1248 )
 
-[node name="Woodbox139" parent="Environment" index="96" instance=ExtResource( 12 )]
+[node name="Woodbox139" parent="Environment" index="96" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1440 )
 
-[node name="Woodbox146" parent="Environment" index="97" instance=ExtResource( 12 )]
+[node name="Woodbox146" parent="Environment" index="97" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1248 )
 
-[node name="Woodbox156" parent="Environment" index="98" instance=ExtResource( 12 )]
+[node name="Woodbox156" parent="Environment" index="98" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1440 )
 
-[node name="Woodbox160" parent="Environment" index="99" instance=ExtResource( 12 )]
+[node name="Woodbox160" parent="Environment" index="99" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1248 )
 
-[node name="Woodbox168" parent="Environment" index="100" instance=ExtResource( 12 )]
+[node name="Woodbox168" parent="Environment" index="100" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1440 )
 
-[node name="Woodbox12" parent="Environment" index="101" instance=ExtResource( 12 )]
+[node name="Woodbox12" parent="Environment" index="101" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 864 )
 
-[node name="Woodbox19" parent="Environment" index="102" instance=ExtResource( 12 )]
+[node name="Woodbox19" parent="Environment" index="102" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 864 )
 
-[node name="Woodbox33" parent="Environment" index="103" instance=ExtResource( 12 )]
+[node name="Woodbox33" parent="Environment" index="103" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 864 )
 
-[node name="Woodbox5" parent="Environment" index="104" instance=ExtResource( 12 )]
+[node name="Woodbox5" parent="Environment" index="104" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 928 )
 
-[node name="Woodbox37" parent="Environment" index="105" instance=ExtResource( 12 )]
+[node name="Woodbox37" parent="Environment" index="105" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1120 )
 
-[node name="Woodbox44" parent="Environment" index="106" instance=ExtResource( 12 )]
+[node name="Woodbox44" parent="Environment" index="106" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1120 )
 
-[node name="Woodbox53" parent="Environment" index="107" instance=ExtResource( 12 )]
+[node name="Woodbox53" parent="Environment" index="107" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1120 )
 
-[node name="Woodbox58" parent="Environment" index="108" instance=ExtResource( 12 )]
+[node name="Woodbox58" parent="Environment" index="108" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1120 )
 
-[node name="Woodbox65" parent="Environment" index="109" instance=ExtResource( 12 )]
+[node name="Woodbox65" parent="Environment" index="109" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1120 )
 
-[node name="Woodbox72" parent="Environment" index="110" instance=ExtResource( 12 )]
+[node name="Woodbox72" parent="Environment" index="110" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1120 )
 
-[node name="Woodbox78" parent="Environment" index="111" instance=ExtResource( 12 )]
+[node name="Woodbox78" parent="Environment" index="111" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 928 )
 
-[node name="Woodbox84" parent="Environment" index="112" instance=ExtResource( 12 )]
+[node name="Woodbox84" parent="Environment" index="112" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1120 )
 
-[node name="Woodbox88" parent="Environment" index="113" instance=ExtResource( 12 )]
+[node name="Woodbox88" parent="Environment" index="113" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1312 )
 
-[node name="Woodbox93" parent="Environment" index="114" instance=ExtResource( 12 )]
+[node name="Woodbox93" parent="Environment" index="114" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1504 )
 
-[node name="Woodbox172" parent="Environment" index="115" instance=ExtResource( 12 )]
+[node name="Woodbox172" parent="Environment" index="115" instance=ExtResource( 13 )]
 
 position = Vector2( 416, 1568 )
 
-[node name="Woodbox102" parent="Environment" index="116" instance=ExtResource( 12 )]
+[node name="Woodbox102" parent="Environment" index="116" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1312 )
 
-[node name="Woodbox104" parent="Environment" index="117" instance=ExtResource( 12 )]
+[node name="Woodbox104" parent="Environment" index="117" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1504 )
 
-[node name="Woodbox169" parent="Environment" index="118" instance=ExtResource( 12 )]
+[node name="Woodbox169" parent="Environment" index="118" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 1568 )
 
-[node name="Woodbox111" parent="Environment" index="119" instance=ExtResource( 12 )]
+[node name="Woodbox111" parent="Environment" index="119" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1312 )
 
-[node name="Woodbox118" parent="Environment" index="120" instance=ExtResource( 12 )]
+[node name="Woodbox118" parent="Environment" index="120" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1504 )
 
-[node name="Woodbox173" parent="Environment" index="121" instance=ExtResource( 12 )]
+[node name="Woodbox173" parent="Environment" index="121" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 1568 )
 
-[node name="Woodbox121" parent="Environment" index="122" instance=ExtResource( 12 )]
+[node name="Woodbox121" parent="Environment" index="122" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1312 )
 
-[node name="Woodbox128" parent="Environment" index="123" instance=ExtResource( 12 )]
+[node name="Woodbox128" parent="Environment" index="123" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1504 )
 
-[node name="Woodbox174" parent="Environment" index="124" instance=ExtResource( 12 )]
+[node name="Woodbox174" parent="Environment" index="124" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 1568 )
 
-[node name="Woodbox134" parent="Environment" index="125" instance=ExtResource( 12 )]
+[node name="Woodbox134" parent="Environment" index="125" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1312 )
 
-[node name="Woodbox140" parent="Environment" index="126" instance=ExtResource( 12 )]
+[node name="Woodbox140" parent="Environment" index="126" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1504 )
 
-[node name="Woodbox175" parent="Environment" index="127" instance=ExtResource( 12 )]
+[node name="Woodbox175" parent="Environment" index="127" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 1568 )
 
-[node name="Woodbox147" parent="Environment" index="128" instance=ExtResource( 12 )]
+[node name="Woodbox147" parent="Environment" index="128" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1312 )
 
-[node name="Woodbox151" parent="Environment" index="129" instance=ExtResource( 12 )]
+[node name="Woodbox151" parent="Environment" index="129" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1504 )
 
-[node name="Woodbox178" parent="Environment" index="130" instance=ExtResource( 12 )]
+[node name="Woodbox178" parent="Environment" index="130" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 1568 )
 
-[node name="Woodbox158" parent="Environment" index="131" instance=ExtResource( 12 )]
+[node name="Woodbox158" parent="Environment" index="131" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1312 )
 
-[node name="Woodbox163" parent="Environment" index="132" instance=ExtResource( 12 )]
+[node name="Woodbox163" parent="Environment" index="132" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1504 )
 
-[node name="Woodbox182" parent="Environment" index="133" instance=ExtResource( 12 )]
+[node name="Woodbox182" parent="Environment" index="133" instance=ExtResource( 13 )]
 
 position = Vector2( 1184, 1568 )
 
-[node name="Woodbox10" parent="Environment" index="134" instance=ExtResource( 12 )]
+[node name="Woodbox10" parent="Environment" index="134" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 928 )
 
-[node name="Woodbox23" parent="Environment" index="135" instance=ExtResource( 12 )]
+[node name="Woodbox23" parent="Environment" index="135" instance=ExtResource( 13 )]
 
 position = Vector2( 800, 928 )
 
-[node name="Woodbox35" parent="Environment" index="136" instance=ExtResource( 12 )]
+[node name="Woodbox35" parent="Environment" index="136" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 928 )
 
-[node name="Woodbox6" parent="Environment" index="137" instance=ExtResource( 12 )]
+[node name="Woodbox6" parent="Environment" index="137" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 928 )
 
-[node name="Woodbox41" parent="Environment" index="138" instance=ExtResource( 12 )]
+[node name="Woodbox41" parent="Environment" index="138" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1120 )
 
-[node name="Woodbox43" parent="Environment" index="139" instance=ExtResource( 12 )]
+[node name="Woodbox43" parent="Environment" index="139" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1120 )
 
-[node name="Woodbox54" parent="Environment" index="140" instance=ExtResource( 12 )]
+[node name="Woodbox54" parent="Environment" index="140" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1120 )
 
-[node name="Woodbox59" parent="Environment" index="141" instance=ExtResource( 12 )]
+[node name="Woodbox59" parent="Environment" index="141" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1120 )
 
-[node name="Woodbox61" parent="Environment" index="142" instance=ExtResource( 12 )]
+[node name="Woodbox61" parent="Environment" index="142" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1120 )
 
-[node name="Woodbox69" parent="Environment" index="143" instance=ExtResource( 12 )]
+[node name="Woodbox69" parent="Environment" index="143" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1120 )
 
-[node name="Woodbox75" parent="Environment" index="144" instance=ExtResource( 12 )]
+[node name="Woodbox75" parent="Environment" index="144" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 928 )
 
-[node name="Woodbox82" parent="Environment" index="145" instance=ExtResource( 12 )]
+[node name="Woodbox82" parent="Environment" index="145" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1120 )
 
-[node name="Woodbox87" parent="Environment" index="146" instance=ExtResource( 12 )]
+[node name="Woodbox87" parent="Environment" index="146" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1312 )
 
-[node name="Woodbox95" parent="Environment" index="147" instance=ExtResource( 12 )]
+[node name="Woodbox95" parent="Environment" index="147" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1504 )
 
-[node name="Woodbox171" parent="Environment" index="148" instance=ExtResource( 12 )]
+[node name="Woodbox171" parent="Environment" index="148" instance=ExtResource( 13 )]
 
 position = Vector2( 480, 1568 )
 
-[node name="Woodbox99" parent="Environment" index="149" instance=ExtResource( 12 )]
+[node name="Woodbox99" parent="Environment" index="149" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1312 )
 
-[node name="Woodbox105" parent="Environment" index="150" instance=ExtResource( 12 )]
+[node name="Woodbox105" parent="Environment" index="150" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1504 )
 
-[node name="Woodbox170" parent="Environment" index="151" instance=ExtResource( 12 )]
+[node name="Woodbox170" parent="Environment" index="151" instance=ExtResource( 13 )]
 
 position = Vector2( 608, 1568 )
 
-[node name="Woodbox112" parent="Environment" index="152" instance=ExtResource( 12 )]
+[node name="Woodbox112" parent="Environment" index="152" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1312 )
 
-[node name="Woodbox119" parent="Environment" index="153" instance=ExtResource( 12 )]
+[node name="Woodbox119" parent="Environment" index="153" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1504 )
 
-[node name="Woodbox179" parent="Environment" index="154" instance=ExtResource( 12 )]
+[node name="Woodbox179" parent="Environment" index="154" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 1568 )
 
-[node name="Woodbox125" parent="Environment" index="155" instance=ExtResource( 12 )]
+[node name="Woodbox125" parent="Environment" index="155" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1312 )
 
-[node name="Woodbox127" parent="Environment" index="156" instance=ExtResource( 12 )]
+[node name="Woodbox127" parent="Environment" index="156" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1504 )
 
-[node name="Woodbox176" parent="Environment" index="157" instance=ExtResource( 12 )]
+[node name="Woodbox176" parent="Environment" index="157" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 1568 )
 
-[node name="Woodbox137" parent="Environment" index="158" instance=ExtResource( 12 )]
+[node name="Woodbox137" parent="Environment" index="158" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1312 )
 
-[node name="Woodbox143" parent="Environment" index="159" instance=ExtResource( 12 )]
+[node name="Woodbox143" parent="Environment" index="159" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1504 )
 
-[node name="Woodbox177" parent="Environment" index="160" instance=ExtResource( 12 )]
+[node name="Woodbox177" parent="Environment" index="160" instance=ExtResource( 13 )]
 
 position = Vector2( 992, 1568 )
 
-[node name="Woodbox150" parent="Environment" index="161" instance=ExtResource( 12 )]
+[node name="Woodbox150" parent="Environment" index="161" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1312 )
 
-[node name="Woodbox155" parent="Environment" index="162" instance=ExtResource( 12 )]
+[node name="Woodbox155" parent="Environment" index="162" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1504 )
 
-[node name="Woodbox180" parent="Environment" index="163" instance=ExtResource( 12 )]
+[node name="Woodbox180" parent="Environment" index="163" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 1568 )
 
-[node name="Woodbox159" parent="Environment" index="164" instance=ExtResource( 12 )]
+[node name="Woodbox159" parent="Environment" index="164" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1312 )
 
-[node name="Woodbox166" parent="Environment" index="165" instance=ExtResource( 12 )]
+[node name="Woodbox166" parent="Environment" index="165" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1504 )
 
-[node name="Woodbox181" parent="Environment" index="166" instance=ExtResource( 12 )]
+[node name="Woodbox181" parent="Environment" index="166" instance=ExtResource( 13 )]
 
 position = Vector2( 1248, 1568 )
 
-[node name="Woodbox15" parent="Environment" index="167" instance=ExtResource( 12 )]
+[node name="Woodbox15" parent="Environment" index="167" instance=ExtResource( 13 )]
 
 position = Vector2( 672, 928 )
 
-[node name="Woodbox21" parent="Environment" index="168" instance=ExtResource( 12 )]
+[node name="Woodbox21" parent="Environment" index="168" instance=ExtResource( 13 )]
 
 position = Vector2( 864, 928 )
 
-[node name="Woodbox29" parent="Environment" index="169" instance=ExtResource( 12 )]
+[node name="Woodbox29" parent="Environment" index="169" instance=ExtResource( 13 )]
 
 position = Vector2( 1056, 928 )
 
-[node name="Woodbox7" parent="Environment" index="170" instance=ExtResource( 12 )]
+[node name="Woodbox7" parent="Environment" index="170" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 800 )
 
-[node name="Woodbox16" parent="Environment" index="171" instance=ExtResource( 12 )]
+[node name="Woodbox16" parent="Environment" index="171" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 800 )
 
-[node name="Woodbox22" parent="Environment" index="172" instance=ExtResource( 12 )]
+[node name="Woodbox22" parent="Environment" index="172" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 800 )
 
-[node name="Woodbox31" parent="Environment" index="173" instance=ExtResource( 12 )]
+[node name="Woodbox31" parent="Environment" index="173" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 800 )
 
-[node name="Woodbox8" parent="Environment" index="174" instance=ExtResource( 12 )]
+[node name="Woodbox8" parent="Environment" index="174" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 864 )
 
-[node name="Woodbox18" parent="Environment" index="175" instance=ExtResource( 12 )]
+[node name="Woodbox18" parent="Environment" index="175" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 864 )
 
-[node name="Woodbox24" parent="Environment" index="176" instance=ExtResource( 12 )]
+[node name="Woodbox24" parent="Environment" index="176" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 864 )
 
-[node name="Woodbox36" parent="Environment" index="177" instance=ExtResource( 12 )]
+[node name="Woodbox36" parent="Environment" index="177" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 864 )
 
-[node name="Woodbox9" parent="Environment" index="178" instance=ExtResource( 12 )]
+[node name="Woodbox9" parent="Environment" index="178" instance=ExtResource( 13 )]
 
 position = Vector2( 544, 928 )
 
-[node name="Woodbox11" parent="Environment" index="179" instance=ExtResource( 12 )]
+[node name="Woodbox11" parent="Environment" index="179" instance=ExtResource( 13 )]
 
 position = Vector2( 736, 928 )
 
-[node name="Woodbox26" parent="Environment" index="180" instance=ExtResource( 12 )]
+[node name="Woodbox26" parent="Environment" index="180" instance=ExtResource( 13 )]
 
 position = Vector2( 928, 928 )
 
-[node name="Woodbox32" parent="Environment" index="181" instance=ExtResource( 12 )]
+[node name="Woodbox32" parent="Environment" index="181" instance=ExtResource( 13 )]
 
 position = Vector2( 1120, 928 )
 

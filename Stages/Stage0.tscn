@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/background_tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/tileset_ground_collision3.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Light.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Exit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Stages/Coins.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GUICanvasLayer.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -151,31 +152,33 @@ position = Vector2( 1125.71, 574.255 )
 
 [node name="Coins" type="Node2D" parent="Items" index="0"]
 
-[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 6 )]
+script = ExtResource( 6 )
+
+[node name="Coin" parent="Items/Coins" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 700, 500 )
 
-[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 6 )]
+[node name="Coin2" parent="Items/Coins" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 580, 450 )
 
-[node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 6 )]
+[node name="Coin3" parent="Items/Coins" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 450 )
 
-[node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 6 )]
+[node name="Coin4" parent="Items/Coins" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 580, 500 )
 
-[node name="Coin5" parent="Items/Coins" index="4" instance=ExtResource( 6 )]
+[node name="Coin5" parent="Items/Coins" index="4" instance=ExtResource( 7 )]
 
 position = Vector2( 640, 500 )
 
-[node name="Coin6" parent="Items/Coins" index="5" instance=ExtResource( 6 )]
+[node name="Coin6" parent="Items/Coins" index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 700, 450 )
 
-[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 7 )]
+[node name="GUICanvasLayer" parent="." index="8" instance=ExtResource( 8 )]
 
 SHOW_TITLE = true
 
