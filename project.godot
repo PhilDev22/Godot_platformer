@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Platformer"
+config/name="Castle Adventure"
 run/main_scene="res://Stages/Stage0.tscn"
 config/icon="res://icon.png"
 

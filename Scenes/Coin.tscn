@@ -23,9 +23,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 11.9854
 
-[node name="Coin" type="Node2D" index="0" groups=[
-"Coins",
-]]
+[node name="Coin" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

@@ -225,6 +225,7 @@ position = Vector2( 1210.67, 577.595 )
 
 [node name="Coins" type="Node2D" parent="Items" index="0"]
 
+editor/display_folded = true
 script = ExtResource( 9 )
 
 [node name="Coin2" parent="Items/Coins" index="0" instance=ExtResource( 10 )]

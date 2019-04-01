@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Woodbox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/wood_box.png" type="Texture" id=2]
 [ext_resource path="res://Assets/particles/particle_wood.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sounds/impactwood08.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -105,12 +106,43 @@ tracks/3/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="Animation" id=4]
+
+resource_name = "reset"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite/RigidBody2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 30.9558, 28.9371 )
 
-[node name="Woodbox" type="Node2D"]
+[node name="Woodbox" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -176,6 +208,7 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/open = SubResource( 3 )
+anims/reset = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Area2D_Destroyable" type="Area2D" parent="." index="3"]
@@ -191,6 +224,15 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_Destroyable" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

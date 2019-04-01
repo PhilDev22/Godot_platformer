@@ -35,6 +35,12 @@ func reset():
 	current_sword_id = -1
 	load_next_level()
 	
+func reset_woodboxes():
+	var environment_node = current_scene.get_node("Environment")
+	if environment_node != null:
+		for woodbox in environment_node.get_children():
+	        woodbox.reset()
+	
 func set_sword_id(id):
 	current_sword_id = id
 	

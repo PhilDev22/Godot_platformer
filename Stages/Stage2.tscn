@@ -330,6 +330,8 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Items" type="Node2D" parent="." index="11"]
 
+editor/display_folded = true
+
 [node name="PotionSmall" parent="Items" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( -30.5641, -97.6804 )

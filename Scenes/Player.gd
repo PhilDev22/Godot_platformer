@@ -57,7 +57,8 @@ func _physics_process(delta):
 			
 			# jump
 			if Input.is_action_pressed("ui_up"):
-				_move_up(true)
+				_move_up(true, true)
+				
 				
 			if is_on_floor():
 				on_ground = true
@@ -96,10 +97,12 @@ func _move_right():
 		$AnimatedSprite.play("run")
 		_flip_horizontal(false)
 	
-func _move_up(when_on_ground):
+func _move_up(when_on_ground, play_sound):
 	if !when_on_ground or (when_on_ground and on_ground):
 		velocity.y = JUMP_POWER
 		on_ground = false
+		if play_sound:
+			$Sounds/AudioStreamPlayer_Jump.playing = true
 		
 func _set_idle():
 	velocity.x = 0
@@ -159,7 +162,7 @@ func _next_level():
 	
 func _spring_back():
 	$AnimatedSprite/AnimationPlayer.play("got_hurt")
-	_move_up(false)
+	_move_up(false, false)
 	spring_back = true
 	
 func _got_hurt(amount):
@@ -171,6 +174,8 @@ func _got_hurt(amount):
 		else:	
 			_spring_back()
 			_update_gui_lifes()
+			$Sounds/AudioStreamPlayer_Hit.playing = true
+			
 		
 func _got_hurt_by_enemy(enemy_area):
 	if not enemy_area.get_owner().dead:
@@ -178,6 +183,7 @@ func _got_hurt_by_enemy(enemy_area):
 	
 func _collect_key(area):
 	area.get_parent().visible = false
+	$Sounds/AudioStreamPlayer_Key.playing = true
 	has_key = true
 	
 func _collect_potion_small(area):
@@ -202,6 +208,7 @@ func _open_treasure(area):
 func on_close_item_popup():
 	popup_active = false
 	$Particles2D.emitting = true
+	$Sounds/AudioStreamPlayer_NewSword.playing = true
 
 # load popup for choosing new item, depending on current stage
 func _show_item_popup():
@@ -221,6 +228,7 @@ func _increase_life_permanent(amount):
 func _collect_coin(area):
 	area.get_owner().queue_free()
 	get_node("/root/Global").add_coin(1)
+	$Sounds/AudioStreamPlayer_Coin.playing = true
 	
 #reduce lifes, stop movement, play death animation		
 func _die():
@@ -229,12 +237,15 @@ func _die():
 	dead = true
 	velocity.x = 0
 	$AnimatedSprite.play("dead")
+	$Sounds/AudioStreamPlayer_Die.playing = true
+	
 	
 func _respawn():
 	dead = false
 	position = get_parent().get_node("Area2D_Start").position
 	_flip_horizontal(false)
 	_reset()
+	get_node("/root/Global").reset_woodboxes()
 
 func _flip_horizontal(flip_left):
 	if flip_left != is_flipped_left:
