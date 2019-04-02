@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Castle Adventure.png-72c9f1c7669f6eacbb229c3fd9993bfd.stex"
+path="res://.import/Castle Adventure.png-d0b0e0d245ab0c0431f7e8f1e09f97e8.stex"
 
 [deps]
 
-source_file="res://Builds/Castle Adventure.png"
-dest_files=[ "res://.import/Castle Adventure.png-72c9f1c7669f6eacbb229c3fd9993bfd.stex" ]
+source_file="res://Builds/Html5/Castle Adventure.png"
+dest_files=[ "res://.import/Castle Adventure.png-d0b0e0d245ab0c0431f7e8f1e09f97e8.stex" ]
 
 [params]
 
